@@ -1,0 +1,86 @@
+.skills {
+  padding: 2rem;
+  max-width: 60rem;
+}
+
+.skills-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: var(--text);
+  margin: 2rem 0 0.75rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.skills-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+}
+
+.skills-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.skills-name {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.skills-dots {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.skills-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.skills-dot.filled {
+  background: var(--accent);
+}
+
+.skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills-chip {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 10px;
+  background: var(--accent-bg);
+  color: var(--text-h);
+}
+
+.skills-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2.5rem;
+}
+
+.skills-spoken {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-spoken li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}

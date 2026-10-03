@@ -1,0 +1,73 @@
+.about {
+  padding: 2rem;
+  max-width: 50rem;
+}
+
+.about-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.about-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: var(--text);
+  margin: 2.5rem 0 0.75rem;
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1rem;
+}
+
+.about-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+}
+
+.about-card h3 {
+  margin: 0 0 0.4rem;
+  color: var(--text-h);
+}
+
+.about-hobbies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.about-chip {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+.about-contact {
+  margin-top: 3rem;
+  padding: 1.75rem;
+  border-radius: 16px;
+  background: var(--accent-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-contact-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.about-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
