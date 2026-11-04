@@ -1,64 +1,64 @@
 .education {
-    padding: 2rem;
-    max-width: 50rem;
+  padding: 2rem;
+  max-width: 50rem;
 }
 
 .education-intro {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .education-list {
-    display:flex;
-    flex-direction: column;
-    gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .education-card {
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
 }
 
 .education-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .education-card h2 {
-    margin: 0;
+  margin: 0;
 }
 
 .education-period {
-    font-size: 0.85rem;
+  font-size: 0.85rem;
 }
 
-.education-period.ongoing{
-    color: var(--accent);
-    background: var(--accent-bg);
-    padding: 0.2rem 0.7rem;
-    border-radius: 999px;
+.education-period.ongoing {
+  color: var(--accent);
+  background: var(--accent-bg);
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
 }
 
 .education-facts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin: 1rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 1rem 0 0;
 }
 
 .education-facts dt {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
 }
 
 .education-facts dd {
-    margin: 0;
-    font-weight: 600;
-    color: var(--text-h)
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-h);
 }
 
 .education-thesis {
@@ -75,24 +75,24 @@
 }
 
 .education-modules {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .education-modules li {
-    border-top: 1px solid var(--border);
-    padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
 }
 
-.education-module-header{
-    display: flex;
-    justify-content: space-between;
-    font-weight: 600;
-    color: var(--text-h);
+.education-module-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--text-h);
 }
 
 .education-courses {

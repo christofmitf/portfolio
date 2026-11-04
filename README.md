@@ -199,10 +199,11 @@ public/               files served as they are (favicon)
 | TypeScript | Type checking | Catches mistakes like a wrong prop or a missing field before the site runs. Coming from Python and Java, I prefer having types |
 | Vite | Dev server and build | Fast hot reload and a ready `react-ts` template. Create React App, the old default, is deprecated, and the React docs name Vite as an option for starting from scratch |
 | oxlint | Linting | Comes with the Vite template and is much faster than ESLint |
+| Prettier | Formatting | Formats all code the same way, so I don't have to think about quotes or spacing and diffs only show real changes. Set to single quotes and no semicolons, like the Vite template |
 | GitHub Actions | CI/CD | Runs directly where the code is, free for public repositories |
 | GitHub Pages | Hosting | Free static hosting that works together with Actions |
 
-Tools planned for Phase 2 (React Router, i18next, GSAP, Prettier, Vitest) will be added here once they are in use.
+Tools planned for Phase 2 (React Router, i18next, GSAP, Vitest) will be added here once they are in use.
 
 ## Run (local)
 
@@ -215,6 +216,15 @@ npm run dev
 
 Then open the URL shown in the terminal.
 
+Other scripts:
+
+```bash
+npm run lint          # oxlint
+npm run format        # format all files with Prettier
+npm run format:check  # only check, used in CI
+npm run build         # type check and production build
+```
+
 ## CI/CD
 
 The site is built and deployed with GitHub Actions ([deploy.yml](.github/workflows/deploy.yml)). The workflow runs on every push to `main` and can also be started by hand from the Actions tab.
@@ -223,10 +233,11 @@ Steps:
 
 1. `npm ci` installs the exact versions from `package-lock.json`
 2. `npm run lint` runs oxlint
-3. `npm run build` type checks with `tsc` and builds the site with Vite
-4. the `dist` folder gets uploaded and deployed to GitHub Pages
+3. `npm run format:check` checks that all files are formatted with Prettier
+4. `npm run build` type checks with `tsc` and builds the site with Vite
+5. the `dist` folder gets uploaded and deployed to GitHub Pages
 
-If linting or the build fails, nothing is deployed, so the live site always stays on the last working version.
+If linting, the format check or the build fails, nothing is deployed, so the live site always stays on the last working version.
 
 The actions are pinned to commit hashes instead of tags like `@v4`, so the pipeline only changes when I update it myself. Because the site lives under `/portfolio/` and not at the root, `base` is set to `/portfolio/` in `vite.config.ts`, otherwise the CSS, JS and images wouldn't load.
 
