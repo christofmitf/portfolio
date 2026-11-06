@@ -47,6 +47,8 @@
 .home-photo {
   aspect-ratio: 4 / 5;
   width: 100%;
+  /* otherwise the height="1125" attribute is used as the actual height */
+  height: auto;
   border-radius: 24px;
   background: var(--accent-bg);
   display: flex;
