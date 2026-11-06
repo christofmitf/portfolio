@@ -15,7 +15,9 @@ function Education() {
   return (
     <section className="education">
       <h1>{t('education.title')}</h1>
-      <p className="education-intro">{t('education.gradeScale')}</p>
+      {t('education.gradeScale') && (
+        <p className="education-intro">{t('education.gradeScale')}</p>
+      )}
 
       <div className="education-list">
         {educationEntries.map((entry) => (

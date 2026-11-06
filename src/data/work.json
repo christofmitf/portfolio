@@ -4,136 +4,175 @@
       "id": "sleepmusic",
       "role": {
         "en": "Research Assistant, SLEEPMUSIC Study",
-        "de": "DE_Research Assistant, SLEEPMUSIC Study"
+        "de": "Studentische Hilfskraft, SLEEPMUSIC-Studie"
       },
       "company": {
         "en": "IPVS, University of Stuttgart",
-        "de": "DE_IPVS, University of Stuttgart"
+        "de": "IPVS, Universität Stuttgart"
       },
       "location": {
         "en": "Stuttgart, Germany",
-        "de": "DE_Stuttgart, Germany"
+        "de": "Stuttgart, Deutschland"
       },
-      "period": { "start": "2025-10", "end": "2026-07" },
+      "period": {
+        "start": "2025-10",
+        "end": "2026-07"
+      },
       "type": {
         "en": "Student Research Assistant",
-        "de": "DE_Student Research Assistant"
+        "de": "HiWi"
       },
       "tasks": [
         {
           "en": "Team member of the SLEEPMUSIC research study",
-          "de": "DE_Team member of the SLEEPMUSIC research study"
+          "de": "Mitglied im Team der Forschungsstudie SLEEPMUSIC"
         },
         {
           "en": "Data analysis and data cleaning",
-          "de": "DE_Data analysis and data cleaning"
+          "de": "Datenanalyse und Datenbereinigung"
         },
         {
           "en": "Testing and co-developing the study software SLUMBER",
-          "de": "DE_Testing and co-developing the study software SLUMBER"
+          "de": "Testen und Mitentwickeln der Studiensoftware SLUMBER"
         },
         {
           "en": "Creating support materials and supporting study participants",
-          "de": "DE_Creating support materials and supporting study participants"
+          "de": "Erstellen von Hilfsmaterialien und Betreuung der Studienteilnehmenden"
         }
       ],
       "skills": [
         "Python",
-        { "en": "Data analysis", "de": "DE_Data analysis" },
-        { "en": "Software testing", "de": "DE_Software testing" }
+        {
+          "en": "Data analysis",
+          "de": "Datenanalyse"
+        },
+        {
+          "en": "Software testing",
+          "de": "Softwaretests"
+        }
       ]
     },
     {
       "id": "swoboda",
       "role": {
         "en": "Software Developer (Polarion)",
-        "de": "DE_Software Developer (Polarion)"
+        "de": "Softwareentwickler (Polarion)"
       },
       "company": "Swoboda Schorndorf KG",
       "location": {
         "en": "Schorndorf, Germany",
-        "de": "DE_Schorndorf, Germany"
+        "de": "Schorndorf, Deutschland"
       },
-      "period": { "start": "2023-10", "end": "2025-03" },
-      "type": { "en": "Working student", "de": "DE_Working student" },
+      "period": {
+        "start": "2023-10",
+        "end": "2025-03"
+      },
+      "type": {
+        "en": "Working student",
+        "de": "Werkstudent"
+      },
       "tasks": [
         {
           "en": "Wrote scripts and reports in the internal ALM platform Polarion",
-          "de": "DE_Wrote scripts and reports in the internal ALM platform Polarion"
+          "de": "Skripte und Reports in der internen ALM-Plattform Polarion geschrieben"
         },
         {
           "en": "Designed, developed and maintained a web server for data access",
-          "de": "DE_Designed, developed and maintained a web server for data access"
+          "de": "Einen Webserver für den Datenzugriff konzipiert, entwickelt und gewartet"
         },
         {
           "en": "Developed and documented new and legacy Java extensions for Polarion",
-          "de": "DE_Developed and documented new and legacy Java extensions for Polarion"
+          "de": "Neue und bestehende Java-Erweiterungen für Polarion entwickelt und dokumentiert"
         },
         {
           "en": "Onboarded new colleagues",
-          "de": "DE_Onboarded new colleagues"
+          "de": "Neue Kolleginnen und Kollegen eingearbeitet"
         }
       ],
       "skills": [
         "Java",
         "Polarion ALM",
         "HTML/JavaScript/CSS & Velocity",
-        { "en": "Documentation", "de": "DE_Documentation" }
+        {
+          "en": "Documentation",
+          "de": "Dokumentation"
+        }
       ]
     },
     {
       "id": "teaching-assistant",
-      "role": { "en": "Teaching Assistant", "de": "DE_Teaching Assistant" },
+      "role": {
+        "en": "Teaching Assistant",
+        "de": "Tutor"
+      },
       "company": {
         "en": "University of Stuttgart (FMI & IPVS)",
-        "de": "DE_University of Stuttgart (FMI & IPVS)"
+        "de": "Universität Stuttgart (FMI & IPVS)"
       },
       "location": {
         "en": "Stuttgart, Germany",
-        "de": "DE_Stuttgart, Germany"
+        "de": "Stuttgart, Deutschland"
       },
       "period": {
         "en": "Summer semester 2023",
-        "de": "DE_Summer semester 2023"
+        "de": "Sommersemester 2023"
       },
       "tasks": [
         {
           "en": "Led weekly tutorials for Theoretical Computer Science II and Data Structures and Algorithms",
-          "de": "DE_Led weekly tutorials for Theoretical Computer Science II and Data Structures and Algorithms"
+          "de": "Wöchentliche Übungsgruppen für Theoretische Informatik II sowie Datenstrukturen und Algorithmen geleitet"
         },
         {
           "en": "Graded students' exercise sheets",
-          "de": "DE_Graded students' exercise sheets"
+          "de": "Übungsblätter der Studierenden korrigiert"
         }
       ],
       "skills": [
-        { "en": "Teaching", "de": "DE_Teaching" },
-        { "en": "Theoretical CS", "de": "DE_Theoretical CS" },
-        { "en": "Algorithms", "de": "DE_Algorithms" }
+        {
+          "en": "Teaching",
+          "de": "Lehre"
+        },
+        {
+          "en": "Theoretical CS",
+          "de": "Theoretische Informatik"
+        },
+        {
+          "en": "Algorithms",
+          "de": "Algorithmen"
+        }
       ]
     }
   ],
   "otherJobs": [
     {
       "id": "kuebler",
-      "role": { "en": "Warehouse worker", "de": "DE_Warehouse worker" },
+      "role": {
+        "en": "Warehouse worker",
+        "de": "Lagermitarbeiter"
+      },
       "company": "Kübler",
-      "period": { "start": "2020", "end": "2021" }
+      "period": {
+        "start": "2020",
+        "end": "2021"
+      }
     },
     {
       "id": "foehl",
       "role": {
         "en": "Production worker (foundry)",
-        "de": "DE_Production worker (foundry)"
+        "de": "Produktionsmitarbeiter (Gießerei)"
       },
       "company": "Föhl",
-      "period": { "start": "2020", "end": "2020" }
+      "period": {
+        "start": "2020",
+        "end": "2020"
+      }
     },
     {
       "id": "klingele",
       "role": {
         "en": "Summer jobs in production",
-        "de": "DE_Summer jobs in production"
+        "de": "Ferienjobs in der Produktion"
       },
       "company": "Klingele Papierwerke",
       "period": "2018, 2019"

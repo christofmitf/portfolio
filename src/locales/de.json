@@ -1,105 +1,102 @@
 {
   "meta": {
-    "title": "DE_Christof Schuster's Portfolio"
+    "title": "Portfolio von Christof Schuster"
   },
   "nav": {
-    "home": "DE_Home",
-    "about": "DE_About Me",
-    "education": "DE_Education",
-    "projects": "DE_Projects",
-    "skills": "DE_Skills",
-    "work": "DE_Work"
+    "home": "Start",
+    "about": "Über mich",
+    "education": "Bildung",
+    "projects": "Projekte",
+    "skills": "Kenntnisse",
+    "work": "Berufserfahrung"
   },
   "header": {
-    "languageSwitch": "DE_Choose language"
+    "languageSwitch": "Sprache wählen"
   },
   "footer": {
-    "builtWith": "DE_Built with React, TypeScript & Vite",
-    "github": "DE_GitHub",
-    "linkedin": "DE_LinkedIn",
-    "email": "DE_Email"
+    "builtWith": "Erstellt mit React, TypeScript & Vite",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "E-Mail"
   },
   "home": {
-    "overline": "DE_M.Sc. Software Engineering | University of Stuttgart",
-    "greeting": "DE_Hi, I'm Christof.",
-    "tagline": "DE_I like computers, software, science and games.",
-    "moreAboutMe": "DE_More about me",
-    "seeExperience": "DE_See my experience",
-    "photoAlt": "DE_Christof Schuster at the Cliffs of Moher, Ireland",
-    "overview": "DE_Overview",
+    "overline": "M.Sc. Software Engineering | Universität Stuttgart",
+    "greeting": "Hi, ich bin Christof.",
+    "tagline": "Ich mag Computer, Software, Wissenschaft und Spiele.",
+    "moreAboutMe": "Mehr über mich",
+    "seeExperience": "Meine Berufserfahrung",
+    "photoAlt": "Christof Schuster an den Cliffs of Moher, Irland",
+    "overview": "Überblick",
     "cards": {
-      "work": {
-        "label": "DE_CS jobs so far",
-        "link": "DE_Work experience"
-      },
+      "work": { "label": "Jobs in der Informatik", "link": "Berufserfahrung" },
       "education": {
-        "label": "DE_Software Engineering, University of Stuttgart",
-        "link": "DE_Education"
+        "label": "Software Engineering, Universität Stuttgart",
+        "link": "Bildung"
       },
       "skills": {
-        "label": "DE_Main languages",
-        "link": "DE_All skills"
+        "label": "Wichtigste Programmiersprachen",
+        "link": "Alle Kenntnisse"
       }
     },
-    "status": "DE_Currently on an ERASMUS semester at the University of Limerick, Ireland."
+    "status": "Gerade im ERASMUS-Semester an der University of Limerick, Irland."
   },
   "about": {
-    "title": "DE_About me",
-    "bio1": "DE_I have always loved puzzles and problem solving, from riddles and board games to computer games and real-life sports. An amazing computer science teacher at school turned that into a real interest and I have been enjoying Computer Science ever since.",
-    "bio2": "DE_I studied Computer Science at the University of Stuttgart, where my bachelor's thesis on trace abstraction solidified my desire to fully understand programs. I am now doing my M.Sc. in Software Engineering there, currently with an ERASMUS semester at the University of Limerick in Ireland.",
-    "bio3": "DE_After my ERASMUS semester, the master's thesis is the last step. I will most likely stay in program analysis for it as well. After that, from summer 2027, I am excited to finally work full-time in industry.",
-    "enjoyTitle": "DE_What I enjoy",
+    "title": "Über mich",
+    "bio1": "Ich mochte schon immer Rätsel und Knobelaufgaben, von Denksportaufgaben und Brettspielen bis zu Computerspielen und Sport. Ein großartiger Informatiklehrer in der Schule hat daraus ein echtes Interesse gemacht, und seitdem begeistert mich die Informatik.",
+    "bio2": "Ich habe an der Universität Stuttgart Informatik studiert. Meine Bachelorarbeit über Trace Abstraction hat mich darin bestärkt, Programme wirklich ganz verstehen zu wollen. Jetzt mache ich dort meinen Master in Software Engineering und bin gerade für ein ERASMUS-Semester an der University of Limerick in Irland.",
+    "bio3": "Nach dem ERASMUS-Semester fehlt nur noch die Masterarbeit, für die ich sehr wahrscheinlich bei der Programmanalyse bleibe. Ab Sommer 2027 freue ich mich darauf, endlich in Vollzeit in einem Unternehmen zu arbeiten.",
+    "enjoyTitle": "Was mir Spaß macht",
     "values": {
       "results": {
-        "title": "DE_Tangible results",
-        "text": "DE_I like seeing progress early. Getting a first version running quickly and then improving it step by step keeps me motivated."
+        "title": "Greifbare Ergebnisse",
+        "text": "Ich sehe gerne früh Fortschritte. Schnell eine erste Version zum Laufen zu bringen und sie dann Schritt für Schritt zu verbessern, motiviert mich."
       },
       "efficiency": {
-        "title": "DE_Efficiency",
-        "text": "DE_Whether finding the optimal way of playing a game, optimizing processes or shaving time off of runtimes, efficiency is a word that I resonate with."
+        "title": "Effizienz",
+        "text": "Ob ich die beste Strategie für ein Spiel suche, Abläufe verbessere oder Laufzeiten verkürze: Effizienz ist etwas, das mich antreibt."
       },
       "explaining": {
-        "title": "DE_Explaining",
-        "text": "DE_Articulating knowledge is a skill that is difficult but very rewarding if done right. My tutoring jobs have taught me as much as I taught my students."
+        "title": "Erklären",
+        "text": "Wissen verständlich zu vermitteln ist schwierig, aber sehr lohnend, wenn es gelingt. Als Tutor habe ich selbst genauso viel gelernt, wie ich meinen Studierenden beigebracht habe."
       }
     },
-    "hobbiesTitle": "DE_Beyond code",
+    "hobbiesTitle": "Neben dem Programmieren",
     "hobbies": {
-      "boardGames": "DE_Board games",
-      "videoGames": "DE_Video games",
-      "badminton": "DE_Badminton",
-      "darts": "DE_Darts",
-      "tableTennis": "DE_Table tennis",
-      "football": "DE_Football",
-      "basketball": "DE_Basketball"
+      "boardGames": "Brettspiele",
+      "videoGames": "Videospiele",
+      "badminton": "Badminton",
+      "darts": "Darts",
+      "tableTennis": "Tischtennis",
+      "football": "Fußball",
+      "basketball": "Basketball"
     },
-    "contactTitle": "DE_Looking for a software engineer from Summer 2027?",
-    "getInTouch": "DE_Get in touch",
-    "seeExperience": "DE_See my experience"
+    "contactTitle": "Auf der Suche nach einem Softwareentwickler ab Sommer 2027?",
+    "getInTouch": "Kontakt aufnehmen",
+    "seeExperience": "Meine Berufserfahrung"
   },
   "education": {
-    "title": "DE_Education",
-    "gradeScale": "DE_Grades use the German scale: 1.0 is the best, 4.0 the lowest passing grade.",
-    "thesis": "DE_Thesis"
+    "title": "Bildung",
+    "gradeScale": "",
+    "thesis": "Abschlussarbeit"
   },
   "work": {
-    "title": "DE_Work",
-    "otherTitle": "DE_Other work experience"
+    "title": "Berufserfahrung",
+    "otherTitle": "Weitere Tätigkeiten"
   },
   "skills": {
-    "title": "DE_Skills",
-    "programming": "DE_Programming languages",
-    "tools": "DE_Frameworks & tools",
-    "spoken": "DE_Spoken languages",
-    "other": "DE_Other skills"
+    "title": "Kenntnisse",
+    "programming": "Programmiersprachen",
+    "tools": "Frameworks & Tools",
+    "spoken": "Sprachen",
+    "other": "Weitere Kenntnisse"
   },
   "projects": {
-    "title": "DE_Projects",
-    "comingSoon": "DE_Coming soon."
+    "title": "Projekte",
+    "comingSoon": "Folgt in Kürze."
   },
   "notFound": {
-    "title": "DE_Page not found",
-    "text": "DE_This page doesn't exist (anymore).",
-    "back": "DE_Back to the home page"
+    "title": "Seite nicht gefunden",
+    "text": "Diese Seite gibt es nicht (mehr).",
+    "back": "Zurück zur Startseite"
   }
 }

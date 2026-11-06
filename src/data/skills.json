@@ -6,7 +6,7 @@
       "level": 5,
       "note": {
         "en": "Most confident | Data analysis, Machine learning, Uni projects",
-        "de": "DE_Most confident | Data analysis, Machine learning, Uni projects"
+        "de": "Am sichersten | Datenanalyse, Machine Learning, Uni-Projekte"
       }
     },
     {
@@ -15,7 +15,7 @@
       "level": 5,
       "note": {
         "en": "Learned programming with it | Many uni projects, Bachelor's thesis, Work experience",
-        "de": "DE_Learned programming with it | Many uni projects, Bachelor's thesis, Work experience"
+        "de": "Damit programmieren gelernt | Viele Uni-Projekte, Bachelorarbeit, Berufserfahrung"
       }
     },
     {
@@ -24,7 +24,7 @@
       "level": 4,
       "note": {
         "en": "Three larger uni projects | Private sandbox projects",
-        "de": "DE_Three larger uni projects | Private sandbox projects"
+        "de": "Drei größere Uni-Projekte | Private Experimentierprojekte"
       }
     },
     {
@@ -33,7 +33,7 @@
       "level": 3,
       "note": {
         "en": "Uni projects | This website",
-        "de": "DE_Uni projects | This website"
+        "de": "Uni-Projekte | Diese Website"
       }
     },
     {
@@ -42,7 +42,7 @@
       "level": 3,
       "note": {
         "en": "One larger scale, very recent project",
-        "de": "DE_One larger scale, very recent project"
+        "de": "Ein größeres, sehr aktuelles Projekt"
       }
     },
     {
@@ -51,7 +51,7 @@
       "level": 2,
       "note": {
         "en": "Statistics course | No larger project yet",
-        "de": "DE_Statistics course | No larger project yet"
+        "de": "Statistikkurs | Noch kein größeres Projekt"
       }
     }
   ],
@@ -59,29 +59,56 @@
   "spokenLanguages": [
     {
       "id": "german",
-      "name": { "en": "German", "de": "DE_German" },
-      "level": { "en": "Native", "de": "DE_Native" }
+      "name": {
+        "en": "German",
+        "de": "Deutsch"
+      },
+      "level": {
+        "en": "Native",
+        "de": "Muttersprache"
+      }
     },
     {
       "id": "english",
-      "name": { "en": "English", "de": "DE_English" },
+      "name": {
+        "en": "English",
+        "de": "Englisch"
+      },
       "level": "C1"
     },
     {
       "id": "romanian",
-      "name": { "en": "Romanian", "de": "DE_Romanian" },
+      "name": {
+        "en": "Romanian",
+        "de": "Rumänisch"
+      },
       "level": "A1"
     }
   ],
   "otherSkills": [
-    { "en": "Teaching", "de": "DE_Teaching" },
-    { "en": "Onboarding", "de": "DE_Onboarding" },
-    { "en": "Technical documentation", "de": "DE_Technical documentation" },
-    { "en": "Data analysis & cleansing", "de": "DE_Data analysis & cleansing" },
-    { "en": "Research", "de": "DE_Research" },
+    {
+      "en": "Teaching",
+      "de": "Lehre"
+    },
+    {
+      "en": "Onboarding",
+      "de": "Einarbeitung neuer Mitarbeitender"
+    },
+    {
+      "en": "Technical documentation",
+      "de": "Technische Dokumentation"
+    },
+    {
+      "en": "Data analysis & cleansing",
+      "de": "Datenanalyse & -bereinigung"
+    },
+    {
+      "en": "Research",
+      "de": "Forschung"
+    },
     {
       "en": "Software internationalization",
-      "de": "DE_Software internationalization"
+      "de": "Software-Internationalisierung"
     }
   ]
 }

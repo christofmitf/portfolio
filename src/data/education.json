@@ -3,80 +3,109 @@
     "id": "msc",
     "degree": {
       "en": "M.Sc. Software Engineering",
-      "de": "DE_M.Sc. Software Engineering"
+      "de": "M.Sc. Software Engineering"
     },
     "institution": {
       "en": "University of Stuttgart",
-      "de": "DE_University of Stuttgart"
+      "de": "Universität Stuttgart"
     },
-    "location": { "en": "Stuttgart, Germany", "de": "DE_Stuttgart, Germany" },
-    "period": { "start": "2025-10" },
+    "location": {
+      "en": "Stuttgart, Germany",
+      "de": "Stuttgart, Deutschland"
+    },
+    "period": {
+      "start": "2025-10"
+    },
     "facts": [
       {
-        "label": { "en": "Current average", "de": "DE_Current average" },
+        "label": {
+          "en": "Current average",
+          "de": "Aktueller Notendurchschnitt"
+        },
         "value": 1.5
       },
       {
         "label": {
           "en": "Expected graduation",
-          "de": "DE_Expected graduation"
+          "de": "Voraussichtlicher Abschluss"
         },
-        "value": { "en": "Summer 2027", "de": "DE_Summer 2027" }
+        "value": {
+          "en": "Summer 2027",
+          "de": "Sommer 2027"
+        }
       }
     ],
     "modules": [
       {
         "name": {
           "en": "Program verification",
-          "de": "DE_Program verification"
+          "de": "Programmverifikation"
         },
         "grade": 1.0,
         "description": {
           "en": "Introduction to formally proving that programs behave correctly. Starting from propositional and first-order logic and SMT solving, the course covered deductive verification with the Hoare calculus, bounded model checking, CEGAR, abstract interpretation, and termination analysis.",
-          "de": "DE_Introduction to formally proving that programs behave correctly. Starting from propositional and first-order logic and SMT solving, the course covered deductive verification with the Hoare calculus, bounded model checking, CEGAR, abstract interpretation, and termination analysis."
+          "de": "Einführung in den formalen Beweis, dass Programme korrekt funktionieren. Ausgehend von Aussagen- und Prädikatenlogik und SMT-Solving behandelte die Vorlesung deduktive Verifikation mit dem Hoare-Kalkül, Bounded Model Checking, CEGAR, abstrakte Interpretation und Terminierungsanalyse."
         }
       },
       {
-        "name": { "en": "Development project", "de": "DE_Development project" },
+        "name": {
+          "en": "Development project",
+          "de": "Entwicklungsprojekt"
+        },
         "grade": 1.3,
         "description": {
           "en": "In a team of six, I mainly developed the AI model and the Flutter app of an automatic darts scoring system. The model was trained on a synthetic dataset rendered in Blender and calculates scores from photos of the dartboard.",
-          "de": "DE_In a team of six, I mainly developed the AI model and the Flutter app of an automatic darts scoring system. The model was trained on a synthetic dataset rendered in Blender and calculates scores from photos of the dartboard."
+          "de": "In einem Team von sechs Personen habe ich hauptsächlich das KI-Modell und die Flutter-App eines automatischen Dart-Zählsystems entwickelt. Das Modell wurde mit einem synthetischen, in Blender gerenderten Datensatz trainiert und berechnet die Punkte aus Fotos der Dartscheibe."
         }
       }
     ]
   },
   {
     "id": "erasmus",
-    "degree": { "en": "ERASMUS Semester", "de": "DE_ERASMUS Semester" },
+    "degree": {
+      "en": "ERASMUS Semester",
+      "de": "ERASMUS-Semester"
+    },
     "institution": {
       "en": "University of Limerick",
-      "de": "DE_University of Limerick"
+      "de": "University of Limerick"
     },
-    "location": { "en": "Limerick, Ireland", "de": "DE_Limerick, Ireland" },
-    "period": { "start": "2026-09", "end": "2026-12" },
+    "location": {
+      "en": "Limerick, Ireland",
+      "de": "Limerick, Irland"
+    },
+    "period": {
+      "start": "2026-09",
+      "end": "2026-12"
+    },
     "facts": [
       {
-        "label": { "en": "Program", "de": "DE_Program" },
+        "label": {
+          "en": "Program",
+          "de": "Programm"
+        },
         "value": {
           "en": "ERASMUS+ exchange during my M.Sc.",
-          "de": "DE_ERASMUS+ exchange during my M.Sc."
+          "de": "ERASMUS+-Austausch während meines Masters"
         }
       }
     ],
     "courses": [
-      { "en": "SE Evolution", "de": "DE_SE Evolution" },
+      {
+        "en": "SE Evolution",
+        "de": "SE Evolution"
+      },
       {
         "en": "SE Development Paradigms",
-        "de": "DE_SE Development Paradigms"
+        "de": "SE Development Paradigms"
       },
       {
         "en": "Language Engineering & Translation Technology",
-        "de": "DE_Language Engineering & Translation Technology"
+        "de": "Language Engineering & Translation Technology"
       },
       {
         "en": "Best Practices: Software Internationalization",
-        "de": "DE_Best Practices: Software Internationalization"
+        "de": "Best Practices: Software Internationalization"
       }
     ]
   },
@@ -84,17 +113,26 @@
     "id": "bsc",
     "degree": {
       "en": "B.Sc. Computer Science",
-      "de": "DE_B.Sc. Computer Science"
+      "de": "B.Sc. Informatik"
     },
     "institution": {
       "en": "University of Stuttgart",
-      "de": "DE_University of Stuttgart"
+      "de": "Universität Stuttgart"
     },
-    "location": { "en": "Stuttgart, Germany", "de": "DE_Stuttgart, Germany" },
-    "period": { "start": "2021-10", "end": "2025-10" },
+    "location": {
+      "en": "Stuttgart, Germany",
+      "de": "Stuttgart, Deutschland"
+    },
+    "period": {
+      "start": "2021-10",
+      "end": "2025-10"
+    },
     "facts": [
       {
-        "label": { "en": "Final grade", "de": "DE_Final grade" },
+        "label": {
+          "en": "Final grade",
+          "de": "Abschlussnote"
+        },
         "value": 1.9
       }
     ],
@@ -106,14 +144,14 @@
       {
         "name": {
           "en": "Programming paradigms",
-          "de": "DE_Programming paradigms"
+          "de": "Programmierparadigmen"
         },
         "grade": 1.0
       },
       {
         "name": {
           "en": "Information Retrieval and Text Mining",
-          "de": "DE_Information Retrieval and Text Mining"
+          "de": "Information Retrieval and Text Mining"
         },
         "grade": 1.3
       }
@@ -123,11 +161,20 @@
     "id": "abitur",
     "degree": "Abitur",
     "institution": "Max-Planck-Gymnasium",
-    "location": { "en": "Schorndorf, Germany", "de": "DE_Schorndorf, Germany" },
-    "period": { "start": "2012", "end": "2020" },
+    "location": {
+      "en": "Schorndorf, Germany",
+      "de": "Schorndorf, Deutschland"
+    },
+    "period": {
+      "start": "2012",
+      "end": "2020"
+    },
     "facts": [
       {
-        "label": { "en": "Final grade", "de": "DE_Final grade" },
+        "label": {
+          "en": "Final grade",
+          "de": "Abschlussnote"
+        },
         "value": 2.0
       }
     ]
