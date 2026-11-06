@@ -1,44 +1,40 @@
+/**
+ * Layout of every page: header, the current page and footer.
+ *
+ * Which page is shown depends on the URL (e.g. `#/work`), not on React state,
+ * so reloading or sharing a link opens the same page.
+ */
+
 import './App.css'
-import Home from './components/pages/Home'
-import About from './components/pages/About'
-import Education from './components/pages/Education'
-import Projects from './components/pages/Projects'
-import Skills from './components/pages/Skills'
-import Work from './components/pages/Work'
-import { useEffect, useState } from 'react'
-import Header from './components/Header'
+import { useEffect } from 'react'
+import { Route, Routes, useLocation } from 'react-router'
 import Footer from './components/Footer'
-import type { PageId } from './lib/navigation'
+import Header from './components/Header'
+import NotFound from './components/pages/NotFound'
+import { pages, paths } from './lib/navigation'
+import { pageComponents } from './routes'
 
 function App() {
-  const [page, setPage] = useState<PageId>('home')
+  const { pathname } = useLocation()
 
   // otherwise switching to a page while scrolled down keeps the scrolling state => unwanted
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [page])
-
-  const renderPage = () => {
-    switch (page) {
-      case 'home':
-        return <Home onNavigate={setPage} />
-      case 'about':
-        return <About onNavigate={setPage} />
-      case 'education':
-        return <Education />
-      case 'projects':
-        return <Projects />
-      case 'skills':
-        return <Skills />
-      case 'work':
-        return <Work />
-    }
-  }
+  }, [pathname])
 
   return (
     <>
-      <Header current={page} onNavigate={setPage} />
-      <main>{renderPage()}</main>
+      <Header />
+      <main>
+        <Routes>
+          {pages.map(({ id }) => {
+            const Page = pageComponents[id]
+            return <Route key={id} path={paths[id]} element={<Page />} />
+          })}
+          {/* any URL that matches none of the pages above */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
       <Footer />
     </>
   )

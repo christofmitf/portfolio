@@ -103,7 +103,7 @@ Phase 2 builds on that and adds what was missing.
 |---|---|---|---|---|
 | P2-1 | Site is live on GitHub Pages and deployed automatically on every push | US11, US13 | A push to `main` updates the live site without manual steps, and a failing lint or build stops the deploy | done |
 | P2-2 | German and English version, chosen by browser language, with a switch in the header | US4, US12 | With a German browser the site opens in German, otherwise in English. The switch changes all texts and dates, and the choice is still there after a reload | planned |
-| P2-3 | Every page has its own URL, so refreshing and shared links work | US10, peer review | Reloading any page stays on that page, a copied link opens the same page, and an unknown URL shows a "not found" page | planned |
+| P2-3 | Every page has its own URL, so refreshing and shared links work | US10, peer review | Reloading any page stays on that page, a copied link opens the same page, and an unknown URL shows a "not found" page | done |
 | P2-4 | Projects page with a short description, technologies and links for each project | US6, US8, peer review | At least 4 projects, each with description, technologies and a link (repository or more info) where one exists | planned |
 | P2-5 | Search and filter on the Projects page | US7 | Typing a word or picking a tag only shows matching projects, and a message appears if nothing matches | planned |
 | P2-6 | Public GitHub repositories loaded through the GitHub API | US8 | Repositories are loaded on page visit, and a loading and an error message are shown when needed | planned |
@@ -144,7 +144,46 @@ Phase 2 builds on that and adds what was missing.
 
 ## Architecture
 
-The diagram shows the current structure (end of Phase 1). I made it by following the imports and props from the entry point `main.tsx` through `App.tsx` into every component, so it matches the code. It will be updated after the Phase 2 refactor.
+I made both diagrams by following the imports and props from the entry point `main.tsx` through `App.tsx` into every component, so they match the code. Solid arrows mean "renders" or "imports". CSS files and images are left out to keep them readable.
+
+### Current (Phase 2)
+
+```mermaid
+flowchart TD
+    main["main.tsx<br/>(entry point)"] --> Router["HashRouter<br/>current page = URL after #"]
+    Router --> App["App.tsx<br/>layout"]
+    App --> Header
+    App --> Routes["Routes<br/>one route per page + 404"]
+    App --> Footer
+    routes["routes.ts<br/>page -> component"]
+    nav["lib/navigation.ts<br/>paths, pages"]
+    Routes --> routes
+    routes --> Pages
+    Routes --> NotFound
+    subgraph Pages ["components/pages"]
+        Home
+        About
+        Education
+        Projects
+        Skills
+        Work
+    end
+    Header --> nav
+    App --> nav
+    Home --> nav
+    About --> nav
+    Pages --> content
+    subgraph content ["content"]
+        data["data/*.json"]
+        types["types/"]
+        lib["lib/localize.ts, lib/format.ts"]
+        hook["hooks/useLanguage.ts"]
+    end
+```
+
+The current page is now part of the URL (`#/work`) instead of React state. Header, Home and About use `Link`/`NavLink` from React Router to change it, and `App` only decides the layout. Work, Education and Skills render their content from the JSON files in `data/`.
+
+### End of Phase 1
 
 ```mermaid
 flowchart TD
@@ -170,24 +209,25 @@ flowchart TD
     About --> nav
 ```
 
-Solid arrows mean "renders" or "imports", dotted arrows are callbacks that send a page change back up to `App`. CSS files and the home page photo are left out to keep it readable. `App` keeps the current page in React state and decides which page component to render. There is no router yet, which is why a reload always goes back to Home (fixed by P2-3).
+Dotted arrows are callbacks that send a page change back up to `App`. `App` kept the current page in React state and decided which page component to render. Because the page wasn't in the URL, a reload always went back to Home, which P2-3 fixed.
 
 ## Project structure
 
 ```text
 src/
-  main.tsx            entry point, mounts App
-  App.tsx             holds the current page, renders Header, the page and Footer
+  main.tsx            entry point, mounts App inside the HashRouter
+  App.tsx             layout: Header, the route for the current URL and Footer
+  routes.ts           which component belongs to which page
   App.css             layout of the main area
   index.css           global styles, colours and shared button styles
   components/
     Header.tsx        navigation bar
     Footer.tsx        links and copyright
-    pages/            one component per page, each with its own CSS file
+    pages/            one component per page (plus NotFound), each with its own CSS file
   data/               content as JSON (work, education, skills), texts in English and German
   types/              TypeScript types for the data, checked when the JSON is imported
   lib/
-    navigation.ts     list of pages and their labels
+    navigation.ts     URL paths of the pages and their labels in the header
     localize.ts       picks the right language from a translated text
     format.ts         dates and grades per language with the Intl API
   hooks/
@@ -208,8 +248,9 @@ public/               files served as they are (favicon)
 | Prettier | Formatting | Formats all code the same way, so I don't have to think about quotes or spacing and diffs only show real changes. Set to single quotes and no semicolons, like the Vite template |
 | GitHub Actions | CI/CD | Runs directly where the code is, free for public repositories |
 | GitHub Pages | Hosting | Free static hosting that works together with Actions |
+| React Router | Navigation | Gives every page its own URL. I use the `HashRouter` (`#/work`), because GitHub Pages only serves static files and would answer a reload of `/portfolio/work` with a 404 |
 
-Tools planned for Phase 2 (React Router, i18next, GSAP, Vitest) will be added here once they are in use.
+Tools planned for Phase 2 (i18next, GSAP, Vitest) will be added here once they are in use.
 
 ## Run (local)
 

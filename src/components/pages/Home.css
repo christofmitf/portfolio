@@ -85,15 +85,11 @@
 }
 
 .home-card-link {
-  font: inherit;
   font-weight: 600;
   color: var(--accent);
-  background: none;
-  border: none;
-  padding: 0.5rem 0 0;
+  text-decoration: none;
+  padding-top: 0.5rem;
   margin-top: auto;
-  text-align: left;
-  cursor: pointer;
 }
 
 .home-now {

@@ -1,10 +1,7 @@
 import './Home.css'
-import type { PageId } from '../../lib/navigation'
+import { Link } from 'react-router'
+import { paths, type PageId } from '../../lib/navigation'
 import photo from '../../assets/cliffs.png'
-
-interface HomeProps {
-  onNavigate: (page: PageId) => void
-}
 
 interface PreviewCard {
   value: string
@@ -35,7 +32,7 @@ const previewCards: PreviewCard[] = [
   },
 ]
 
-function Home({ onNavigate }: HomeProps) {
+function Home() {
   return (
     <section className="home">
       <div className="home-intro">
@@ -48,15 +45,12 @@ function Home({ onNavigate }: HomeProps) {
             I like computers, software, science and games.
           </p>
           <div className="home-actions">
-            <button
-              className="button primary"
-              onClick={() => onNavigate('about')}
-            >
+            <Link to={paths.about} className="button primary">
               More about me
-            </button>
-            <button className="button" onClick={() => onNavigate('work')}>
+            </Link>
+            <Link to={paths.work} className="button">
               See my experience
-            </button>
+            </Link>
           </div>
         </div>
         <img src={photo} alt="Christof Schuster" className="home-photo" />
@@ -67,12 +61,9 @@ function Home({ onNavigate }: HomeProps) {
           <article key={card.target} className="home-card">
             <p className="home-card-value">{card.value}</p>
             <p>{card.label}</p>
-            <button
-              className="home-card-link"
-              onClick={() => onNavigate(card.target)}
-            >
+            <Link to={paths[card.target]} className="home-card-link">
               {card.linkText} -&gt;
-            </button>
+            </Link>
           </article>
         ))}
       </div>

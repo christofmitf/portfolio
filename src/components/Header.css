@@ -8,10 +8,7 @@
 
 .header-name,
 .nav-link {
-  background: none;
-  border: none;
-  font: inherit;
-  cursor: pointer;
+  text-decoration: none;
 }
 
 .header-name {

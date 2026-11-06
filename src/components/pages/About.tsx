@@ -1,9 +1,6 @@
-import type { PageId } from '../../lib/navigation'
+import { Link } from 'react-router'
+import { paths } from '../../lib/navigation'
 import './About.css'
-
-interface AboutProps {
-  onNavigate: (page: PageId) => void
-}
 
 interface Value {
   title: string
@@ -35,7 +32,7 @@ const hobbies: string[] = [
   'Basketball',
 ]
 
-function About({ onNavigate }: AboutProps) {
+function About() {
   return (
     <section className="about">
       <h1>About me</h1>
@@ -88,9 +85,9 @@ function About({ onNavigate }: AboutProps) {
           <a className="button primary" href="mailto:christof.schuster@gmx.de">
             Get in touch
           </a>
-          <button className="button" onClick={() => onNavigate('work')}>
+          <Link to={paths.work} className="button">
             See my experience
-          </button>
+          </Link>
         </div>
       </div>
     </section>
