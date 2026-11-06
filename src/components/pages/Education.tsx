@@ -1,85 +1,15 @@
 import './Education.css'
+import educationData from '../../data/education.json'
+import useLanguage from '../../hooks/useLanguage'
+import { formatGrade, formatPeriod, isOngoing } from '../../lib/format'
+import { localize } from '../../lib/localize'
+import type { EducationEntry } from '../../types/education'
 
-interface Module {
-  name: string
-  grade: string
-  description?: string
-}
-
-interface EducationEntry {
-  degree: string
-  institution: string
-  location: string
-  period: string
-  ongoing?: boolean
-  facts: { label: string; value: string }[]
-  thesis?: { title: string; grade: string } // TODO Institute?
-  modules?: Module[]
-  courses?: string[]
-}
-
-const educationEntries: EducationEntry[] = [
-  {
-    degree: 'M.Sc. Software Engineering',
-    institution: 'University of Stuttgart',
-    location: 'Stuttgart, Germany',
-    period: 'Oct 2025 - present',
-    ongoing: true,
-    facts: [
-      { label: 'Current average', value: '1.5' },
-      { label: 'Expected graduation', value: 'Summer 2027' },
-    ],
-    modules: [
-      {
-        name: 'Program verification',
-        grade: '1.0',
-        description:
-          'Introduction to formally proving that programs behave correctly. Starting from propositional and first-order logic and SMT solving, the course covered deductive verification with the Hoare calculus, bounded model checking, CEGAR, abstract interpretation, and termination analysis.',
-      },
-      {
-        name: 'Development project',
-        grade: '1.3',
-        description:
-          'In a team of six, I mainly developed the AI model and the Flutter app of an automatic darts scoring system. The model was trained on a synthetic dataset rendered in Blender and calculates scores from photos of the dartboard.',
-      },
-    ],
-  },
-  {
-    degree: 'ERASMUS Semester',
-    institution: 'University of Limerick',
-    location: 'Limerick, Ireland',
-    period: 'Sep 2026 - Dec 2026',
-    ongoing: true,
-    facts: [{ label: 'Program', value: 'ERASMUS+ exchange during my M.Sc.' }],
-    courses: [
-      'SE Evolution',
-      'SE Development Paradigms',
-      'Language Engineering & Translation Technology',
-      'Best Practices: Software Internationalization',
-    ],
-  },
-  {
-    degree: 'B.Sc. Computer Science',
-    institution: 'University of Stuttgart',
-    location: 'Stuttgart, Germany',
-    period: 'Oct 2021 - Oct 2025',
-    facts: [{ label: 'Final grade', value: '1.9' }],
-    thesis: { title: 'Data flow graph guided trace abstraction', grade: '1.0' },
-    modules: [
-      { name: 'Programming paradigms', grade: '1.0' },
-      { name: 'Information Retrieval and Text Mining', grade: '1.3' },
-    ],
-  },
-  {
-    degree: 'Abitur',
-    institution: 'Max-Planck-Gymnasium',
-    location: 'Schorndorf, Germany',
-    period: '2012 - 2020',
-    facts: [{ label: 'Final grade', value: '2.0' }],
-  },
-]
+const educationEntries: EducationEntry[] = educationData
 
 function Education() {
+  const language = useLanguage()
+
   return (
     <section className="education">
       <h1>Education</h1>
@@ -90,36 +20,44 @@ function Education() {
 
       <div className="education-list">
         {educationEntries.map((entry) => (
-          <article key={entry.degree} className="education-card">
+          <article key={entry.id} className="education-card">
             <div className="education-card-header">
-              <h2>{entry.degree}</h2>
+              <h2>{localize(entry.degree, language)}</h2>
               <span
                 className={
-                  entry.ongoing
+                  isOngoing(entry.period)
                     ? 'education-period ongoing'
                     : 'education-period'
                 }
               >
-                {entry.period}
+                {formatPeriod(entry.period, language)}
               </span>
             </div>
             <p>
-              {entry.institution} | {entry.location}
+              {localize(entry.institution, language)} |{' '}
+              {localize(entry.location, language)}
             </p>
 
             <dl className="education-facts">
               {entry.facts.map((fact) => (
-                <div key={fact.label}>
-                  <dt>{fact.label}</dt>
-                  <dd>{fact.value}</dd>
+                <div key={localize(fact.label, language)}>
+                  <dt>{localize(fact.label, language)}</dt>
+                  <dd>
+                    {typeof fact.value === 'number'
+                      ? formatGrade(fact.value, language)
+                      : localize(fact.value, language)}
+                  </dd>
                 </div>
               ))}
             </dl>
             {entry.courses && (
               <div className="education-courses">
                 {entry.courses.map((course) => (
-                  <span key={course} className="education-course">
-                    {course}
+                  <span
+                    key={localize(course, language)}
+                    className="education-course"
+                  >
+                    {localize(course, language)}
                   </span>
                 ))}
               </div>
@@ -130,7 +68,7 @@ function Education() {
                 <p>Thesis</p>
                 <div className="education-module-header">
                   <span>{entry.thesis.title}</span>
-                  <span>{entry.thesis.grade}</span>
+                  <span>{formatGrade(entry.thesis.grade, language)}</span>
                 </div>
               </div>
             )}
@@ -138,12 +76,14 @@ function Education() {
             {entry.modules && (
               <ul className="education-modules">
                 {entry.modules.map((mod) => (
-                  <li key={mod.name}>
+                  <li key={localize(mod.name, language)}>
                     <div className="education-module-header">
-                      <span>{mod.name}</span>
-                      <span>{mod.grade}</span>
+                      <span>{localize(mod.name, language)}</span>
+                      <span>{formatGrade(mod.grade, language)}</span>
                     </div>
-                    {mod.description && <p>{mod.description}</p>}
+                    {mod.description && (
+                      <p>{localize(mod.description, language)}</p>
+                    )}
                   </li>
                 ))}
               </ul>

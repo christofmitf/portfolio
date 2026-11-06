@@ -180,12 +180,18 @@ src/
   App.tsx             holds the current page, renders Header, the page and Footer
   App.css             layout of the main area
   index.css           global styles, colours and shared button styles
-  lib/
-    navigation.ts     list of pages and their labels
   components/
     Header.tsx        navigation bar
     Footer.tsx        links and copyright
     pages/            one component per page, each with its own CSS file
+  data/               content as JSON (work, education, skills), texts in English and German
+  types/              TypeScript types for the data, checked when the JSON is imported
+  lib/
+    navigation.ts     list of pages and their labels
+    localize.ts       picks the right language from a translated text
+    format.ts         dates and grades per language with the Intl API
+  hooks/
+    useLanguage.ts    current language (always English until the language switch exists)
   assets/             images that are imported in the code
 public/               files served as they are (favicon)
 .github/workflows/    CI/CD pipeline

@@ -1,0 +1,87 @@
+{
+  "programmingLanguages": [
+    {
+      "id": "python",
+      "name": "Python",
+      "level": 5,
+      "note": {
+        "en": "Most confident | Data analysis, Machine learning, Uni projects",
+        "de": "DE_Most confident | Data analysis, Machine learning, Uni projects"
+      }
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "level": 5,
+      "note": {
+        "en": "Learned programming with it | Many uni projects, Bachelor's thesis, Work experience",
+        "de": "DE_Learned programming with it | Many uni projects, Bachelor's thesis, Work experience"
+      }
+    },
+    {
+      "id": "dart",
+      "name": "Dart / Flutter",
+      "level": 4,
+      "note": {
+        "en": "Three larger uni projects | Private sandbox projects",
+        "de": "DE_Three larger uni projects | Private sandbox projects"
+      }
+    },
+    {
+      "id": "web",
+      "name": "Web (HTML, CSS, JS/TS)",
+      "level": 3,
+      "note": {
+        "en": "Uni projects | This website",
+        "de": "DE_Uni projects | This website"
+      }
+    },
+    {
+      "id": "kotlin",
+      "name": "Kotlin/Android",
+      "level": 3,
+      "note": {
+        "en": "One larger scale, very recent project",
+        "de": "DE_One larger scale, very recent project"
+      }
+    },
+    {
+      "id": "r",
+      "name": "R",
+      "level": 2,
+      "note": {
+        "en": "Statistics course | No larger project yet",
+        "de": "DE_Statistics course | No larger project yet"
+      }
+    }
+  ],
+  "tools": ["Git", "LaTeX", "Docker", "Polarion", "MemoQ"],
+  "spokenLanguages": [
+    {
+      "id": "german",
+      "name": { "en": "German", "de": "DE_German" },
+      "level": { "en": "Native", "de": "DE_Native" }
+    },
+    {
+      "id": "english",
+      "name": { "en": "English", "de": "DE_English" },
+      "level": "C1"
+    },
+    {
+      "id": "romanian",
+      "name": { "en": "Romanian", "de": "DE_Romanian" },
+      "level": "A1"
+    }
+  ],
+  "otherSkills": [
+    { "en": "Teaching", "de": "DE_Teaching" },
+    { "en": "Onboarding", "de": "DE_Onboarding" },
+    { "en": "Technical documentation", "de": "DE_Technical documentation" },
+    { "en": "Data analysis & cleansing", "de": "DE_Data analysis & cleansing" },
+    { "en": "Research", "de": "DE_Research" },
+    {
+      "en": "Software internationalization",
+      "de": "DE_Software internationalization"
+    }
+  ]
+}

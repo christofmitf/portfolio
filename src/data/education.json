@@ -1,0 +1,135 @@
+[
+  {
+    "id": "msc",
+    "degree": {
+      "en": "M.Sc. Software Engineering",
+      "de": "DE_M.Sc. Software Engineering"
+    },
+    "institution": {
+      "en": "University of Stuttgart",
+      "de": "DE_University of Stuttgart"
+    },
+    "location": { "en": "Stuttgart, Germany", "de": "DE_Stuttgart, Germany" },
+    "period": { "start": "2025-10" },
+    "facts": [
+      {
+        "label": { "en": "Current average", "de": "DE_Current average" },
+        "value": 1.5
+      },
+      {
+        "label": {
+          "en": "Expected graduation",
+          "de": "DE_Expected graduation"
+        },
+        "value": { "en": "Summer 2027", "de": "DE_Summer 2027" }
+      }
+    ],
+    "modules": [
+      {
+        "name": {
+          "en": "Program verification",
+          "de": "DE_Program verification"
+        },
+        "grade": 1.0,
+        "description": {
+          "en": "Introduction to formally proving that programs behave correctly. Starting from propositional and first-order logic and SMT solving, the course covered deductive verification with the Hoare calculus, bounded model checking, CEGAR, abstract interpretation, and termination analysis.",
+          "de": "DE_Introduction to formally proving that programs behave correctly. Starting from propositional and first-order logic and SMT solving, the course covered deductive verification with the Hoare calculus, bounded model checking, CEGAR, abstract interpretation, and termination analysis."
+        }
+      },
+      {
+        "name": { "en": "Development project", "de": "DE_Development project" },
+        "grade": 1.3,
+        "description": {
+          "en": "In a team of six, I mainly developed the AI model and the Flutter app of an automatic darts scoring system. The model was trained on a synthetic dataset rendered in Blender and calculates scores from photos of the dartboard.",
+          "de": "DE_In a team of six, I mainly developed the AI model and the Flutter app of an automatic darts scoring system. The model was trained on a synthetic dataset rendered in Blender and calculates scores from photos of the dartboard."
+        }
+      }
+    ]
+  },
+  {
+    "id": "erasmus",
+    "degree": { "en": "ERASMUS Semester", "de": "DE_ERASMUS Semester" },
+    "institution": {
+      "en": "University of Limerick",
+      "de": "DE_University of Limerick"
+    },
+    "location": { "en": "Limerick, Ireland", "de": "DE_Limerick, Ireland" },
+    "period": { "start": "2026-09", "end": "2026-12" },
+    "facts": [
+      {
+        "label": { "en": "Program", "de": "DE_Program" },
+        "value": {
+          "en": "ERASMUS+ exchange during my M.Sc.",
+          "de": "DE_ERASMUS+ exchange during my M.Sc."
+        }
+      }
+    ],
+    "courses": [
+      { "en": "SE Evolution", "de": "DE_SE Evolution" },
+      {
+        "en": "SE Development Paradigms",
+        "de": "DE_SE Development Paradigms"
+      },
+      {
+        "en": "Language Engineering & Translation Technology",
+        "de": "DE_Language Engineering & Translation Technology"
+      },
+      {
+        "en": "Best Practices: Software Internationalization",
+        "de": "DE_Best Practices: Software Internationalization"
+      }
+    ]
+  },
+  {
+    "id": "bsc",
+    "degree": {
+      "en": "B.Sc. Computer Science",
+      "de": "DE_B.Sc. Computer Science"
+    },
+    "institution": {
+      "en": "University of Stuttgart",
+      "de": "DE_University of Stuttgart"
+    },
+    "location": { "en": "Stuttgart, Germany", "de": "DE_Stuttgart, Germany" },
+    "period": { "start": "2021-10", "end": "2025-10" },
+    "facts": [
+      {
+        "label": { "en": "Final grade", "de": "DE_Final grade" },
+        "value": 1.9
+      }
+    ],
+    "thesis": {
+      "title": "Data flow graph guided trace abstraction",
+      "grade": 1.0
+    },
+    "modules": [
+      {
+        "name": {
+          "en": "Programming paradigms",
+          "de": "DE_Programming paradigms"
+        },
+        "grade": 1.0
+      },
+      {
+        "name": {
+          "en": "Information Retrieval and Text Mining",
+          "de": "DE_Information Retrieval and Text Mining"
+        },
+        "grade": 1.3
+      }
+    ]
+  },
+  {
+    "id": "abitur",
+    "degree": "Abitur",
+    "institution": "Max-Planck-Gymnasium",
+    "location": { "en": "Schorndorf, Germany", "de": "DE_Schorndorf, Germany" },
+    "period": { "start": "2012", "end": "2020" },
+    "facts": [
+      {
+        "label": { "en": "Final grade", "de": "DE_Final grade" },
+        "value": 2.0
+      }
+    ]
+  }
+]
