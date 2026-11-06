@@ -6,7 +6,7 @@
  */
 
 import './App.css'
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -26,14 +26,17 @@ function App() {
     <>
       <Header />
       <main>
-        <Routes>
-          {pages.map(({ id }) => {
-            const Page = pageComponents[id]
-            return <Route key={id} path={paths[id]} element={<Page />} />
-          })}
-          {/* any URL that matches none of the pages above */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        {/* shows nothing while a lazy page is still loading, header and footer stay */}
+        <Suspense fallback={null}>
+          <Routes>
+            {pages.map(({ id }) => {
+              const Page = pageComponents[id]
+              return <Route key={id} path={paths[id]} element={<Page />} />
+            })}
+            {/* any URL that matches none of the pages above */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </>

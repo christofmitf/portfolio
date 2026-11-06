@@ -108,7 +108,7 @@ Phase 2 builds on that and adds what was missing.
 | P2-5 | Search and filter on the Projects page | US7 | Typing a word or picking a tag only shows matching projects, and a message appears if nothing matches | planned |
 | P2-6 | Public GitHub repositories loaded through the GitHub API | US8 | Repositories are loaded on page visit, and a loading and an error message are shown when needed | planned |
 | P2-7 | Layout and navigation work on phones | US5 | All pages are usable at 360 px width (see NFR-1) | planned |
-| P2-8 | Pages and images are only loaded when needed | US11 | Each page is its own JavaScript chunk in the build, and images below the fold use lazy loading | planned |
+| P2-8 | Pages and images are only loaded when needed | US11 | Each page is its own JavaScript chunk in the build, and images below the fold use lazy loading | done |
 | P2-9 | Content (jobs, education, skills, projects) stored in JSON files instead of inside the components | maintainability | Changing a job or project only means editing a JSON file, no component code | planned |
 | P2-10 | Animations to make the site feel less static | peer review | Cards and sections animate in when they come into view, and animations are turned off with "reduce motion" | planned |
 | P2-11 | Code explained with comments and JSDoc headers | US13, lecturer feedback | Every component and data file starts with a JSDoc header, and non-obvious logic has a comment | planned |
@@ -217,7 +217,7 @@ Dotted arrows are callbacks that send a page change back up to `App`. `App` kept
 src/
   main.tsx            entry point, mounts App inside the HashRouter
   App.tsx             layout: Header, the route for the current URL and Footer
-  routes.ts           which component belongs to which page
+  routes.ts           which component belongs to which page, pages are lazy loaded
   App.css             layout of the main area
   index.css           global styles, colours and shared button styles
   components/

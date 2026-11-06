@@ -1,7 +1,7 @@
 import './Home.css'
 import { Link } from 'react-router'
 import { paths, type PageId } from '../../lib/navigation'
-import photo from '../../assets/cliffs.png'
+import photo from '../../assets/cliffs.webp'
 
 interface PreviewCard {
   value: string
@@ -53,7 +53,14 @@ function Home() {
             </Link>
           </div>
         </div>
-        <img src={photo} alt="Christof Schuster" className="home-photo" />
+        {/* width and height reserve the space before the image has loaded */}
+        <img
+          src={photo}
+          alt="Christof Schuster at the Cliffs of Moher, Ireland"
+          width={900}
+          height={1125}
+          className="home-photo"
+        />
       </div>
       <h2 className="home-label">Overview</h2>
       <div className="home-overview">
