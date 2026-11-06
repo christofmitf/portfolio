@@ -1,38 +1,42 @@
+import { useTranslation } from 'react-i18next'
 import './Footer.css'
 
 // TODO add icons
 interface FooterLink {
-  label: string
+  /** key of the label in the translations (footer.*) */
+  id: 'github' | 'linkedin' | 'email'
   href: string
 }
 
 const footerLinks: FooterLink[] = [
-  { label: 'GitHub', href: 'https://github.com/christofmitf' },
+  { id: 'github', href: 'https://github.com/christofmitf' },
   {
-    label: 'LinkedIn',
+    id: 'linkedin',
     href: 'https://www.linkedin.com/in/christof-schuster-179431326/',
   },
-  { label: 'Email', href: 'mailto:christof.schuster@gmx.de' },
+  { id: 'email', href: 'mailto:christof.schuster@gmx.de' },
 ]
 
 const year = new Date().getFullYear()
 
 function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer className="footer">
       <div className="footer-info">
         <p>© {year} Christof Schuster</p>
-        <p className="footer-built">Built with React, TypeScript & Vite</p>
+        <p className="footer-built">{t('footer.builtWith')}</p>
       </div>
       <nav className="footer-links">
         {footerLinks.map((link) => (
           <a
-            key={link.label}
+            key={link.id}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {link.label}
+            {t(`footer.${link.id}`)}
           </a>
         ))}
       </nav>

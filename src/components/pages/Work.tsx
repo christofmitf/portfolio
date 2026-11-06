@@ -1,5 +1,6 @@
 import './Work.css'
 import workData from '../../data/work.json'
+import { useTranslation } from 'react-i18next'
 import useLanguage from '../../hooks/useLanguage'
 import { formatPeriod } from '../../lib/format'
 import { localize } from '../../lib/localize'
@@ -8,11 +9,12 @@ import type { WorkData } from '../../types/work'
 const { jobs, otherJobs }: WorkData = workData
 
 function Work() {
-  const language = useLanguage()
+  const { t } = useTranslation()
+  const { language } = useLanguage()
 
   return (
     <section className="work">
-      <h1>Work</h1>
+      <h1>{t('work.title')}</h1>
 
       <div className="work-list">
         {jobs.map((job) => (
@@ -50,7 +52,7 @@ function Work() {
         ))}
       </div>
       {/* TODO maybe some description for other work */}
-      <h2 className="work-other-title">Other work experience</h2>
+      <h2 className="work-other-title">{t('work.otherTitle')}</h2>
       <ul className="work-other">
         {otherJobs.map((job) => (
           <li key={job.id}>

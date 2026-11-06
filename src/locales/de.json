@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "DE_Christof Schuster's Portfolio"
+  },
+  "nav": {
+    "home": "DE_Home",
+    "about": "DE_About Me",
+    "education": "DE_Education",
+    "projects": "DE_Projects",
+    "skills": "DE_Skills",
+    "work": "DE_Work"
+  },
+  "header": {
+    "languageSwitch": "DE_Choose language"
+  },
+  "footer": {
+    "builtWith": "DE_Built with React, TypeScript & Vite",
+    "github": "DE_GitHub",
+    "linkedin": "DE_LinkedIn",
+    "email": "DE_Email"
+  },
+  "home": {
+    "overline": "DE_M.Sc. Software Engineering | University of Stuttgart",
+    "greeting": "DE_Hi, I'm Christof.",
+    "tagline": "DE_I like computers, software, science and games.",
+    "moreAboutMe": "DE_More about me",
+    "seeExperience": "DE_See my experience",
+    "photoAlt": "DE_Christof Schuster at the Cliffs of Moher, Ireland",
+    "overview": "DE_Overview",
+    "cards": {
+      "work": {
+        "label": "DE_CS jobs so far",
+        "link": "DE_Work experience"
+      },
+      "education": {
+        "label": "DE_Software Engineering, University of Stuttgart",
+        "link": "DE_Education"
+      },
+      "skills": {
+        "label": "DE_Main languages",
+        "link": "DE_All skills"
+      }
+    },
+    "status": "DE_Currently on an ERASMUS semester at the University of Limerick, Ireland."
+  },
+  "about": {
+    "title": "DE_About me",
+    "bio1": "DE_I have always loved puzzles and problem solving, from riddles and board games to computer games and real-life sports. An amazing computer science teacher at school turned that into a real interest and I have been enjoying Computer Science ever since.",
+    "bio2": "DE_I studied Computer Science at the University of Stuttgart, where my bachelor's thesis on trace abstraction solidified my desire to fully understand programs. I am now doing my M.Sc. in Software Engineering there, currently with an ERASMUS semester at the University of Limerick in Ireland.",
+    "bio3": "DE_After my ERASMUS semester, the master's thesis is the last step. I will most likely stay in program analysis for it as well. After that, from summer 2027, I am excited to finally work full-time in industry.",
+    "enjoyTitle": "DE_What I enjoy",
+    "values": {
+      "results": {
+        "title": "DE_Tangible results",
+        "text": "DE_I like seeing progress early. Getting a first version running quickly and then improving it step by step keeps me motivated."
+      },
+      "efficiency": {
+        "title": "DE_Efficiency",
+        "text": "DE_Whether finding the optimal way of playing a game, optimizing processes or shaving time off of runtimes, efficiency is a word that I resonate with."
+      },
+      "explaining": {
+        "title": "DE_Explaining",
+        "text": "DE_Articulating knowledge is a skill that is difficult but very rewarding if done right. My tutoring jobs have taught me as much as I taught my students."
+      }
+    },
+    "hobbiesTitle": "DE_Beyond code",
+    "hobbies": {
+      "boardGames": "DE_Board games",
+      "videoGames": "DE_Video games",
+      "badminton": "DE_Badminton",
+      "darts": "DE_Darts",
+      "tableTennis": "DE_Table tennis",
+      "football": "DE_Football",
+      "basketball": "DE_Basketball"
+    },
+    "contactTitle": "DE_Looking for a software engineer from Summer 2027?",
+    "getInTouch": "DE_Get in touch",
+    "seeExperience": "DE_See my experience"
+  },
+  "education": {
+    "title": "DE_Education",
+    "gradeScale": "DE_Grades use the German scale: 1.0 is the best, 4.0 the lowest passing grade.",
+    "thesis": "DE_Thesis"
+  },
+  "work": {
+    "title": "DE_Work",
+    "otherTitle": "DE_Other work experience"
+  },
+  "skills": {
+    "title": "DE_Skills",
+    "programming": "DE_Programming languages",
+    "tools": "DE_Frameworks & tools",
+    "spoken": "DE_Spoken languages",
+    "other": "DE_Other skills"
+  },
+  "projects": {
+    "title": "DE_Projects",
+    "comingSoon": "DE_Coming soon."
+  },
+  "notFound": {
+    "title": "DE_Page not found",
+    "text": "DE_This page doesn't exist (anymore).",
+    "back": "DE_Back to the home page"
+  }
+}

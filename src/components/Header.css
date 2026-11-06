@@ -17,6 +17,12 @@
   color: var(--text-h);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
 .nav {
   display: flex;
   gap: 28px;

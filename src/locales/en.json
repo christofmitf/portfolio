@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Christof Schuster's Portfolio"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Me",
+    "education": "Education",
+    "projects": "Projects",
+    "skills": "Skills",
+    "work": "Work"
+  },
+  "header": {
+    "languageSwitch": "Choose language"
+  },
+  "footer": {
+    "builtWith": "Built with React, TypeScript & Vite",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
+  },
+  "home": {
+    "overline": "M.Sc. Software Engineering | University of Stuttgart",
+    "greeting": "Hi, I'm Christof.",
+    "tagline": "I like computers, software, science and games.",
+    "moreAboutMe": "More about me",
+    "seeExperience": "See my experience",
+    "photoAlt": "Christof Schuster at the Cliffs of Moher, Ireland",
+    "overview": "Overview",
+    "cards": {
+      "work": { "label": "CS jobs so far", "link": "Work experience" },
+      "education": {
+        "label": "Software Engineering, University of Stuttgart",
+        "link": "Education"
+      },
+      "skills": { "label": "Main languages", "link": "All skills" }
+    },
+    "status": "Currently on an ERASMUS semester at the University of Limerick, Ireland."
+  },
+  "about": {
+    "title": "About me",
+    "bio1": "I have always loved puzzles and problem solving, from riddles and board games to computer games and real-life sports. An amazing computer science teacher at school turned that into a real interest and I have been enjoying Computer Science ever since.",
+    "bio2": "I studied Computer Science at the University of Stuttgart, where my bachelor's thesis on trace abstraction solidified my desire to fully understand programs. I am now doing my M.Sc. in Software Engineering there, currently with an ERASMUS semester at the University of Limerick in Ireland.",
+    "bio3": "After my ERASMUS semester, the master's thesis is the last step. I will most likely stay in program analysis for it as well. After that, from summer 2027, I am excited to finally work full-time in industry.",
+    "enjoyTitle": "What I enjoy",
+    "values": {
+      "results": {
+        "title": "Tangible results",
+        "text": "I like seeing progress early. Getting a first version running quickly and then improving it step by step keeps me motivated."
+      },
+      "efficiency": {
+        "title": "Efficiency",
+        "text": "Whether finding the optimal way of playing a game, optimizing processes or shaving time off of runtimes, efficiency is a word that I resonate with."
+      },
+      "explaining": {
+        "title": "Explaining",
+        "text": "Articulating knowledge is a skill that is difficult but very rewarding if done right. My tutoring jobs have taught me as much as I taught my students."
+      }
+    },
+    "hobbiesTitle": "Beyond code",
+    "hobbies": {
+      "boardGames": "Board games",
+      "videoGames": "Video games",
+      "badminton": "Badminton",
+      "darts": "Darts",
+      "tableTennis": "Table tennis",
+      "football": "Football",
+      "basketball": "Basketball"
+    },
+    "contactTitle": "Looking for a software engineer from Summer 2027?",
+    "getInTouch": "Get in touch",
+    "seeExperience": "See my experience"
+  },
+  "education": {
+    "title": "Education",
+    "gradeScale": "Grades use the German scale: 1.0 is the best, 4.0 the lowest passing grade.",
+    "thesis": "Thesis"
+  },
+  "work": {
+    "title": "Work",
+    "otherTitle": "Other work experience"
+  },
+  "skills": {
+    "title": "Skills",
+    "programming": "Programming languages",
+    "tools": "Frameworks & tools",
+    "spoken": "Spoken languages",
+    "other": "Other skills"
+  },
+  "projects": {
+    "title": "Projects",
+    "comingSoon": "Coming soon."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page doesn't exist (anymore).",
+    "back": "Back to the home page"
+  }
+}

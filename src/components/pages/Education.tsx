@@ -1,5 +1,6 @@
 import './Education.css'
 import educationData from '../../data/education.json'
+import { useTranslation } from 'react-i18next'
 import useLanguage from '../../hooks/useLanguage'
 import { formatGrade, formatPeriod, isOngoing } from '../../lib/format'
 import { localize } from '../../lib/localize'
@@ -8,15 +9,13 @@ import type { EducationEntry } from '../../types/education'
 const educationEntries: EducationEntry[] = educationData
 
 function Education() {
-  const language = useLanguage()
+  const { t } = useTranslation()
+  const { language } = useLanguage()
 
   return (
     <section className="education">
-      <h1>Education</h1>
-      <p className="education-intro">
-        Grades use the German scale: 1.0 is the best, 4.0 the lowest passing
-        grade.
-      </p>
+      <h1>{t('education.title')}</h1>
+      <p className="education-intro">{t('education.gradeScale')}</p>
 
       <div className="education-list">
         {educationEntries.map((entry) => (
@@ -65,7 +64,7 @@ function Education() {
 
             {entry.thesis && (
               <div className="education-thesis">
-                <p>Thesis</p>
+                <p>{t('education.thesis')}</p>
                 <div className="education-module-header">
                   <span>{entry.thesis.title}</span>
                   <span>{formatGrade(entry.thesis.grade, language)}</span>

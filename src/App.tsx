@@ -29,7 +29,7 @@ function App() {
         {/* shows nothing while a lazy page is still loading, header and footer stay */}
         <Suspense fallback={null}>
           <Routes>
-            {pages.map(({ id }) => {
+            {pages.map((id) => {
               const Page = pageComponents[id]
               return <Route key={id} path={paths[id]} element={<Page />} />
             })}

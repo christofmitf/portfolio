@@ -7,7 +7,7 @@ import type { DateRange } from '../types/common'
 import type { Language, Localized, Text } from '../types/i18n'
 import { localize } from './localize'
 
-// TODO move to the UI translations once i18next is set up
+// kept here instead of the i18next translations so that the formatting functions stay pure
 const presentLabel: Localized = { en: 'present', de: 'heute' }
 
 /** "2025-10" becomes a Date in October 2025, "2020" one in January 2020. */

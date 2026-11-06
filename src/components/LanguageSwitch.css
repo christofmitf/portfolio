@@ -1,0 +1,26 @@
+.language-switch {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.language-option {
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.language-option:hover {
+  color: var(--text-h);
+}
+
+.language-option.active {
+  background: var(--accent-bg);
+  color: var(--accent);
+}

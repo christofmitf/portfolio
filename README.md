@@ -102,7 +102,7 @@ Phase 2 builds on that and adds what was missing.
 | ID | Requirement | From | Done when | Status |
 |---|---|---|---|---|
 | P2-1 | Site is live on GitHub Pages and deployed automatically on every push | US11, US13 | A push to `main` updates the live site without manual steps, and a failing lint or build stops the deploy | done |
-| P2-2 | German and English version, chosen by browser language, with a switch in the header | US4, US12 | With a German browser the site opens in German, otherwise in English. The switch changes all texts and dates, and the choice is still there after a reload | planned |
+| P2-2 | German and English version, chosen by browser language, with a switch in the header | US4, US12 | With a German browser the site opens in German, otherwise in English. The switch changes all texts and dates, and the choice is still there after a reload | in progress (switch done, German texts missing) |
 | P2-3 | Every page has its own URL, so refreshing and shared links work | US10, peer review | Reloading any page stays on that page, a copied link opens the same page, and an unknown URL shows a "not found" page | done |
 | P2-4 | Projects page with a short description, technologies and links for each project | US6, US8, peer review | At least 4 projects, each with description, technologies and a link (repository or more info) where one exists | planned |
 | P2-5 | Search and filter on the Projects page | US7 | Typing a word or picking a tag only shows matching projects, and a message appears if nothing matches | planned |
@@ -223,15 +223,18 @@ src/
   components/
     Header.tsx        navigation bar
     Footer.tsx        links and copyright
+    LanguageSwitch.tsx  EN/DE buttons in the header
     pages/            one component per page (plus NotFound), each with its own CSS file
   data/               content as JSON (work, education, skills), texts in English and German
+  locales/            UI texts (headings, buttons, navigation) as en.json and de.json
+  i18n.ts             i18next setup: language detection, saving the choice, <html lang>
   types/              TypeScript types for the data, checked when the JSON is imported
   lib/
     navigation.ts     URL paths of the pages and their labels in the header
     localize.ts       picks the right language from a translated text
     format.ts         dates and grades per language with the Intl API
   hooks/
-    useLanguage.ts    current language (always English until the language switch exists)
+    useLanguage.ts    current language and a function to change it
   assets/             images that are imported in the code
 public/               files served as they are (favicon)
 .github/workflows/    CI/CD pipeline
@@ -248,9 +251,10 @@ public/               files served as they are (favicon)
 | Prettier | Formatting | Formats all code the same way, so I don't have to think about quotes or spacing and diffs only show real changes. Set to single quotes and no semicolons, like the Vite template |
 | GitHub Actions | CI/CD | Runs directly where the code is, free for public repositories |
 | GitHub Pages | Hosting | Free static hosting that works together with Actions |
+| i18next + react-i18next | Translations | The most widely used i18n library for React. Detects the browser language, remembers the choice and checks the translation keys with TypeScript |
 | React Router | Navigation | Gives every page its own URL. I use the `HashRouter` (`#/work`), because GitHub Pages only serves static files and would answer a reload of `/portfolio/work` with a 404 |
 
-Tools planned for Phase 2 (i18next, GSAP, Vitest) will be added here once they are in use.
+Tools planned for Phase 2 (GSAP, Vitest) will be added here once they are in use.
 
 ## Run (local)
 

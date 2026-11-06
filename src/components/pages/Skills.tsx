@@ -1,5 +1,6 @@
 import './Skills.css'
 import skillsData from '../../data/skills.json'
+import { useTranslation } from 'react-i18next'
 import useLanguage from '../../hooks/useLanguage'
 import { localize } from '../../lib/localize'
 import type { SkillsData } from '../../types/skills'
@@ -14,13 +15,14 @@ const {
 const maxLevel = 5
 
 function Skills() {
-  const language = useLanguage()
+  const { t } = useTranslation()
+  const { language } = useLanguage()
 
   return (
     <section className="skills">
-      <h1>Skills</h1>
+      <h1>{t('skills.title')}</h1>
 
-      <h2 className="skills-label">Programming languages</h2>
+      <h2 className="skills-label">{t('skills.programming')}</h2>
       <div className="skills-grid">
         {programmingLanguages.map((lang) => (
           <article key={lang.id} className="skills-card">
@@ -44,7 +46,7 @@ function Skills() {
         ))}
       </div>
 
-      <h2 className="skills-label">Frameworks & tools</h2>
+      <h2 className="skills-label">{t('skills.tools')}</h2>
       <div className="skills-chips">
         {tools.map((tool) => (
           <span key={tool} className="skills-chip">
@@ -55,7 +57,7 @@ function Skills() {
 
       <div className="skills-columns">
         <div>
-          <h2 className="skills-label">Spoken languages</h2>
+          <h2 className="skills-label">{t('skills.spoken')}</h2>
           <ul className="skills-spoken">
             {spokenLanguages.map((lang) => (
               <li key={lang.id}>
@@ -66,7 +68,7 @@ function Skills() {
           </ul>
         </div>
         <div>
-          <h2 className="skills-label">Other skills</h2>
+          <h2 className="skills-label">{t('skills.other')}</h2>
           <div className="skills-chips">
             {otherSkills.map((skill) => (
               <span key={localize(skill, language)} className="skills-chip">
