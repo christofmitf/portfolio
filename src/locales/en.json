@@ -28,12 +28,18 @@
     "photoAlt": "Christof Schuster at the Cliffs of Moher, Ireland",
     "overview": "Overview",
     "cards": {
-      "work": { "label": "CS jobs so far", "link": "Work experience" },
+      "work": {
+        "label": "CS jobs so far",
+        "link": "Work experience"
+      },
       "education": {
         "label": "Software Engineering, University of Stuttgart",
         "link": "Education"
       },
-      "skills": { "label": "Main languages", "link": "All skills" }
+      "skills": {
+        "label": "Main languages",
+        "link": "All skills"
+      }
     },
     "status": "Currently on an ERASMUS semester at the University of Limerick, Ireland."
   },
@@ -89,7 +95,20 @@
   },
   "projects": {
     "title": "Projects",
-    "comingSoon": "Coming soon."
+    "searchLabel": "Search projects",
+    "searchPlaceholder": "Search, e.g. Flutter or sleep",
+    "categoryLabel": "Filter by category",
+    "categories": {
+      "all": "All",
+      "university": "University",
+      "work": "Work",
+      "personal": "Personal"
+    },
+    "results_one": "{{count}} project",
+    "results_other": "{{count}} projects",
+    "withTechnology": "using {{technology}}",
+    "reset": "Reset filters",
+    "noResults": "No projects match your search."
   },
   "notFound": {
     "title": "Page not found",

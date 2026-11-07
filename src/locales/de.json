@@ -28,7 +28,10 @@
     "photoAlt": "Christof Schuster an den Cliffs of Moher, Irland",
     "overview": "Überblick",
     "cards": {
-      "work": { "label": "Jobs in der Informatik", "link": "Berufserfahrung" },
+      "work": {
+        "label": "Jobs in der Informatik",
+        "link": "Berufserfahrung"
+      },
       "education": {
         "label": "Software Engineering, Universität Stuttgart",
         "link": "Bildung"
@@ -92,7 +95,20 @@
   },
   "projects": {
     "title": "Projekte",
-    "comingSoon": "Folgt in Kürze."
+    "searchLabel": "Projekte durchsuchen",
+    "searchPlaceholder": "Suchen, z. B. Flutter oder Schlaf",
+    "categoryLabel": "Nach Kategorie filtern",
+    "categories": {
+      "all": "Alle",
+      "university": "Uni",
+      "work": "Arbeit",
+      "personal": "Privat"
+    },
+    "results_one": "{{count}} Projekt",
+    "results_other": "{{count}} Projekte",
+    "withTechnology": "mit {{technology}}",
+    "reset": "Filter zurücksetzen",
+    "noResults": "Keine passenden Projekte gefunden."
   },
   "notFound": {
     "title": "Seite nicht gefunden",

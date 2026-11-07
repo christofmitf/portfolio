@@ -1,0 +1,125 @@
+[
+  {
+    "id": "vibe",
+    "title": "VIBE",
+    "context": {
+      "en": "Software engineering research project, team of 3",
+      "de": "Forschungsprojekt Softwaretechnik, Team von drei Personen"
+    },
+    "description": {
+      "en": "VIBE extends the research app VitaBeat, which combines the music someone listens to with heart rate and other data from their smartwatch. We added personalised song recommendations based on vital data and the current activity, and gamification to keep users engaged. For the gamification, I built an achievement system and a quiz system, and I was also responsible for the user studies.",
+      "de": "VIBE erweitert die Forschungs-App VitaBeat, die gehörte Musik mit Herzfrequenz und anderen Daten der Smartwatch verbindet. Wir haben personalisierte Songempfehlungen auf Basis von Vitaldaten und aktueller Aktivität ergänzt, außerdem Gamification, damit die Nutzung motiviert bleibt. Für die Gamification habe ich ein Erfolgssystem und ein Quizsystem entwickelt, außerdem war ich für die Nutzerstudien zuständig."
+    },
+    "period": {
+      "start": "2026-03",
+      "end": "2026-08"
+    },
+    "category": "university",
+    "technologies": ["Kotlin", "Android", "Wear OS", "Spotify SDK"],
+    "links": [
+      {
+        "label": {
+          "en": "VitaBeat project page",
+          "de": "Projektseite VitaBeat"
+        },
+        "url": "https://www.ipvs.uni-stuttgart.de/departments/sc/research/projects/recent/vitabeat/"
+      }
+    ]
+  },
+  {
+    "id": "naptime",
+    "title": "NAPTIME",
+    "context": {
+      "en": "Research assistant job at IPVS, mostly built alone",
+      "de": "HiWi-Stelle am IPVS, größtenteils allein entwickelt"
+    },
+    "description": {
+      "en": "NAPTIME (Nocturnal Analysis Pipeline for Tracking and Interpreting the Measured Experiment) processes the data of the SLEEPMUSIC sleep study. It first cleans the recordings from the study software SLUMBER and sorts them into the BIDS standard. It then runs several analyses on them, such as automatic sleep scoring, heart rate and other quality metrics, and creates plots. The results are shown in a dashboard for the researchers. Its features grew with what the researchers needed.",
+      "de": "NAPTIME (Nocturnal Analysis Pipeline for Tracking and Interpreting the Measured Experiment) verarbeitet die Daten der Schlafstudie SLEEPMUSIC. Zuerst bereinigt die Pipeline die Aufnahmen aus der Studiensoftware SLUMBER und sortiert sie in den BIDS-Standard. Danach führt sie mehrere Analysen durch, zum Beispiel automatische Schlafphasenbestimmung, Herzfrequenz und weitere Qualitätsmetriken, und erstellt Plots. Die Ergebnisse sehen die Forschenden in einem Dashboard. Die Funktionen sind mit den Anforderungen der Forschenden gewachsen."
+    },
+    "period": {
+      "start": "2025-10",
+      "end": "2026-07"
+    },
+    "category": "work",
+    "technologies": ["Python", "BIDS"],
+    "links": [
+      {
+        "label": {
+          "en": "SLEEPMUSIC project page",
+          "de": "Projektseite SLEEPMUSIC"
+        },
+        "url": "https://www.ipvs.uni-stuttgart.de/departments/sc/research/projects/recent/sleepmusic/"
+      }
+    ]
+  },
+  {
+    "id": "darts",
+    "title": {
+      "en": "Darts scoring app",
+      "de": "Dart-Zähl-App"
+    },
+    "context": {
+      "en": "M.Sc. development project, team of 6",
+      "de": "Entwicklungsprojekt im Master, Team von sechs Personen"
+    },
+    "description": {
+      "en": "An app that calculates the score of a darts throw from a photo of the board. I mainly worked on the YOLO detection model and the Flutter app. Because real photos of dartboards with labelled darts are hard to get, we trained the model on a synthetic dataset that we rendered in Blender.",
+      "de": "Eine App, die aus einem Foto der Dartscheibe die geworfenen Punkte berechnet. Ich habe hauptsächlich am YOLO-Erkennungsmodell und an der Flutter-App gearbeitet. Weil echte Fotos von Dartscheiben mit markierten Pfeilen schwer zu bekommen sind, haben wir das Modell mit einem synthetischen Datensatz trainiert, den wir in Blender gerendert haben."
+    },
+    "period": {
+      "start": "2025-11",
+      "end": "2026-04"
+    },
+    "category": "university",
+    "technologies": ["Flutter", "Dart", "Python", "YOLO", "Blender"]
+  },
+  {
+    "id": "logic-quiz",
+    "title": {
+      "en": "Logic quiz app",
+      "de": "Logik-Quiz-App"
+    },
+    "context": {
+      "en": "Practical course in theoretical computer science, solo project",
+      "de": "Fachpraktikum Theoretische Informatik, Einzelprojekt"
+    },
+    "description": {
+      "en": "A quiz platform for practising propositional logic, with questions like \"Which of these formulas are equivalent?\". It consists of a Flutter app with different question types, difficulty levels and a timer, a Go backend that serves the questions and has an admin dashboard, and a question generator, also in Go, that creates new questions automatically.",
+      "de": "Eine Quiz-Plattform zum Üben von Aussagenlogik, mit Fragen wie „Welche dieser Formeln sind äquivalent?“. Sie besteht aus einer Flutter-App mit verschiedenen Fragetypen, Schwierigkeitsstufen und Timer, einem Go-Backend, das die Fragen bereitstellt und ein Admin-Dashboard hat, und einem ebenfalls in Go geschriebenen Generator, der automatisch neue Fragen erstellt."
+    },
+    "period": {
+      "start": "2025-10",
+      "end": "2026-04"
+    },
+    "category": "university",
+    "technologies": ["Flutter", "Dart", "Go"]
+  },
+  {
+    "id": "bachelor-thesis",
+    "title": "Data flow graph guided trace abstraction",
+    "context": {
+      "en": "Bachelor's thesis, grade 1.0",
+      "de": "Bachelorarbeit, Note 1,0"
+    },
+    "description": {
+      "en": "Trace abstraction proves that a program is correct by checking its possible execution paths and generalising the proof for one path to many similar ones. In my thesis I used data flow graphs to guide this process. I implemented it as an extension of the Ultimate program analysis framework.",
+      "de": "Trace Abstraction beweist die Korrektheit eines Programms, indem sie mögliche Ausführungspfade prüft und den Beweis für einen Pfad auf viele ähnliche verallgemeinert. In meiner Arbeit habe ich diesen Prozess mit Datenflussgraphen gesteuert. Umgesetzt habe ich das als Erweiterung des Programmanalyse-Frameworks Ultimate."
+    },
+    "period": {
+      "start": "2025-04",
+      "end": "2025-10"
+    },
+    "category": "university",
+    "technologies": ["Java", "Ultimate"],
+    "links": [
+      {
+        "label": {
+          "en": "Ultimate on GitHub",
+          "de": "Ultimate auf GitHub"
+        },
+        "url": "https://github.com/ultimate-pa/ultimate"
+      }
+    ]
+  }
+]
