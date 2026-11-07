@@ -20,6 +20,7 @@ Live version: https://christofmitf.github.io/portfolio/
 - [Project structure](#project-structure)
 - [Tools](#tools)
 - [Run (local)](#run-local)
+- [Tests](#tests)
 - [CI/CD](#cicd)
 - [Credits](#credits)
 - [References](#references)
@@ -112,7 +113,7 @@ Phase 2 builds on that and adds what was missing.
 | P2-9 | Content (jobs, education, skills, projects) stored in JSON files instead of inside the components | maintainability | Changing a job or project only means editing a JSON file, no component code | planned |
 | P2-10 | Animations to make the site feel less static | peer review | Cards and sections animate in when they come into view, and animations are turned off with "reduce motion" | planned |
 | P2-11 | Code explained with comments and JSDoc headers | US13, lecturer feedback | Every component and data file starts with a JSDoc header, and non-obvious logic has a comment | planned |
-| P2-12 | Code formatter and automated tests, both checked in the pipeline | US13 | The pipeline fails if the code isn't formatted or a test fails | planned |
+| P2-12 | Code formatter and automated tests, both checked in the pipeline | US13 | The pipeline fails if the code isn't formatted or a test fails | done |
 | P2-13 | Availability from summer 2027 shown on the home page (so far it's only on About) | US1 | "Available from summer 2027" is visible without scrolling on the home page | planned |
 
 ### Non-functional requirements
@@ -225,7 +226,8 @@ src/
     Footer.tsx        links and copyright
     LanguageSwitch.tsx  EN/DE buttons in the header
     pages/            one component per page (plus NotFound), each with its own CSS file
-  data/               content as JSON (work, education, skills), texts in English and German
+  data/               content as JSON (work, education, skills, projects), texts in English and German
+    data.test.ts      checks the content: unique ids, valid dates, complete translations
   locales/            UI texts (headings, buttons, navigation) as en.json and de.json
   i18n.ts             i18next setup: language detection, saving the choice, <html lang>
   types/              TypeScript types for the data, checked when the JSON is imported
@@ -233,6 +235,8 @@ src/
     navigation.ts     URL paths of the pages and their labels in the header
     localize.ts       picks the right language from a translated text
     format.ts         dates and grades per language with the Intl API
+    filterProjects.ts search and filter logic of the Projects page
+    *.test.ts         unit tests next to the file they test
   hooks/
     useLanguage.ts    current language and a function to change it
   assets/             images that are imported in the code
@@ -252,9 +256,10 @@ public/               files served as they are (favicon)
 | GitHub Actions | CI/CD | Runs directly where the code is, free for public repositories |
 | GitHub Pages | Hosting | Free static hosting that works together with Actions |
 | i18next + react-i18next | Translations | The most widely used i18n library for React. Detects the browser language, remembers the choice and checks the translation keys with TypeScript |
+| Vitest | Tests | Made by the Vite team and uses the same config, so TypeScript and JSON imports work in tests without extra setup. The API (`describe`, `it`, `expect`) is the same as Jest's |
 | React Router | Navigation | Gives every page its own URL. I use the `HashRouter` (`#/work`), because GitHub Pages only serves static files and would answer a reload of `/portfolio/work` with a 404 |
 
-Tools planned for Phase 2 (GSAP, Vitest) will be added here once they are in use.
+Tools planned for Phase 2 (GSAP) will be added here once they are in use.
 
 ## Run (local)
 
@@ -273,8 +278,19 @@ Other scripts:
 npm run lint          # oxlint
 npm run format        # format all files with Prettier
 npm run format:check  # only check, used in CI
+npm test              # run all tests once
+npx vitest            # run tests again on every change
 npm run build         # type check and production build
 ```
+
+## Tests
+
+Tests use [Vitest](https://vitest.dev/) and sit next to the file they test (`format.ts` and `format.test.ts`). There are two kinds:
+
+- **Unit tests** for the functions in `src/lib`: date periods and grades in both languages, picking the right language, and the project search and filter. They don't need React, because these functions only take input and return output. The filter tests use small made-up projects, so they don't break whenever I change the real content.
+- **Content tests** (`src/data/data.test.ts`) for the JSON files. TypeScript checks that every field exists and has the right type, but not that the values make sense. These tests check that ids are unique, dates are real months and don't end before they start, every text exists in English and German, no `DE_` placeholder is left, projects have a known category and links use https.
+
+To check that the content tests really catch mistakes, I broke `projects.json` on purpose (a duplicate id, the month `2026-13`, a `DE_` placeholder, an unknown category and an `http` link). Each change made exactly the matching test fail.
 
 ## CI/CD
 
@@ -285,10 +301,11 @@ Steps:
 1. `npm ci` installs the exact versions from `package-lock.json`
 2. `npm run lint` runs oxlint
 3. `npm run format:check` checks that all files are formatted with Prettier
-4. `npm run build` type checks with `tsc` and builds the site with Vite
-5. the `dist` folder gets uploaded and deployed to GitHub Pages
+4. `npm test` runs all tests with Vitest
+5. `npm run build` type checks with `tsc` and builds the site with Vite
+6. the `dist` folder gets uploaded and deployed to GitHub Pages
 
-If linting, the format check or the build fails, nothing is deployed, so the live site always stays on the last working version.
+If linting, the format check, a test or the build fails, nothing is deployed, so the live site always stays on the last working version.
 
 The actions are pinned to commit hashes instead of tags like `@v4`, so the pipeline only changes when I update it myself. Because the site lives under `/portfolio/` and not at the root, `base` is set to `/portfolio/` in `vite.config.ts`, otherwise the CSS, JS and images wouldn't load.
 
