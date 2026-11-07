@@ -1,7 +1,9 @@
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
   padding: 20px 32px;
   border-bottom: 1px solid var(--border);
 }
@@ -42,4 +44,82 @@
 .nav-link.active {
   color: var(--accent);
   border-bottom-color: var(--accent);
+}
+
+/* hidden above the header until it gets keyboard focus */
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 32px;
+  transform: translateY(-200%);
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  z-index: 20;
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.menu-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: none;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+/* The German labels are long ("Berufserfahrung"), so the links stop fitting below about 900 px */
+@media (max-width: 900px) {
+  .header {
+    padding: 16px 32px;
+  }
+
+  .header-actions {
+    gap: 12px;
+  }
+
+  .menu-button {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 16px 16px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    z-index: 10;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 12px 0;
+    border-bottom: none;
+    border-left: 2px solid transparent;
+    padding-left: 12px;
+  }
+
+  .nav-link.active {
+    border-left-color: var(--accent);
+  }
 }

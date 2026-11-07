@@ -11,7 +11,10 @@
     "work": "Berufserfahrung"
   },
   "header": {
-    "languageSwitch": "Sprache wählen"
+    "languageSwitch": "Sprache wählen",
+    "skipToContent": "Zum Inhalt springen",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen"
   },
   "footer": {
     "builtWith": "Erstellt mit React, TypeScript & Vite",

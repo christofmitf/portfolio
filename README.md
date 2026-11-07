@@ -108,7 +108,7 @@ Phase 2 builds on that and adds what was missing.
 | P2-4 | Projects page with a short description, technologies and links for each project | US6, US8, peer review | At least 4 projects, each with description, technologies and a link (repository or more info) where one exists | done (descriptions to be refined) |
 | P2-5 | Search and filter on the Projects page | US7 | Typing a word or picking a tag only shows matching projects, and a message appears if nothing matches | done |
 | P2-6 | Public GitHub repositories loaded through the GitHub API | US8 | Repositories are loaded on page visit, and a loading and an error message are shown when needed | planned |
-| P2-7 | Layout and navigation work on phones | US5 | All pages are usable at 360 px width (see NFR-1) | planned |
+| P2-7 | Layout and navigation work on phones | US5 | All pages are usable at 360 px width (see NFR-1) | done |
 | P2-8 | Pages and images are only loaded when needed | US11 | Each page is its own JavaScript chunk in the build, and images below the fold use lazy loading | done |
 | P2-9 | Content (jobs, education, skills, projects) stored in JSON files instead of inside the components | maintainability | Changing a job or project only means editing a JSON file, no component code | planned |
 | P2-10 | Animations to make the site feel less static | peer review | Cards and sections animate in when they come into view, and animations are turned off with "reduce motion" | planned |
@@ -222,7 +222,7 @@ src/
   App.css             layout of the main area
   index.css           global styles, colours and shared button styles
   components/
-    Header.tsx        navigation bar
+    Header.tsx        navigation bar, collapses into a menu button below 900 px
     Footer.tsx        links and copyright
     LanguageSwitch.tsx  EN/DE buttons in the header
     pages/            one component per page (plus NotFound), each with its own CSS file
@@ -256,6 +256,7 @@ public/               files served as they are (favicon)
 | GitHub Actions | CI/CD | Runs directly where the code is, free for public repositories |
 | GitHub Pages | Hosting | Free static hosting that works together with Actions |
 | i18next + react-i18next | Translations | The most widely used i18n library for React. Detects the browser language, remembers the choice and checks the translation keys with TypeScript |
+| lucide-react | Icons | Came with the setup I started from. Icons are separate React components, so only the ones I use (menu and close) end up in the build |
 | Vitest | Tests | Made by the Vite team and uses the same config, so TypeScript and JSON imports work in tests without extra setup. The API (`describe`, `it`, `expect`) is the same as Jest's |
 | React Router | Navigation | Gives every page its own URL. I use the `HashRouter` (`#/work`), because GitHub Pages only serves static files and would answer a reload of `/portfolio/work` with a 404 |
 

@@ -11,7 +11,10 @@
     "work": "Work"
   },
   "header": {
-    "languageSwitch": "Choose language"
+    "languageSwitch": "Choose language",
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "footer": {
     "builtWith": "Built with React, TypeScript & Vite",

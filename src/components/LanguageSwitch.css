@@ -24,3 +24,8 @@
   background: var(--accent-bg);
   color: var(--accent);
 }
+
+/* the group has overflow: hidden, so the outline has to be drawn inside the button */
+.language-option:focus-visible {
+  outline-offset: -2px;
+}

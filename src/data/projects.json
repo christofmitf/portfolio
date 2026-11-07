@@ -4,7 +4,7 @@
     "title": "VIBE",
     "context": {
       "en": "Software engineering research project, team of 3",
-      "de": "Forschungsprojekt Softwaretechnik, Team von drei Personen"
+      "de": "Forschungsprojekt Software Engineering, Team von drei Personen"
     },
     "description": {
       "en": "VIBE extends the research app VitaBeat, which combines the music someone listens to with heart rate and other data from their smartwatch. We added personalised song recommendations based on vital data and the current activity, and gamification to keep users engaged. For the gamification, I built an achievement system and a quiz system, and I was also responsible for the user studies.",

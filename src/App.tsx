@@ -25,7 +25,8 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      {/* tabIndex -1 so the skip link in the header can move the focus here */}
+      <main id="main" tabIndex={-1}>
         {/* shows nothing while a lazy page is still loading, header and footer stay */}
         <Suspense fallback={null}>
           <Routes>
