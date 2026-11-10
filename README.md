@@ -234,6 +234,7 @@ src/
     Footer.tsx        links and copyright
     LanguageSwitch.tsx  EN/DE buttons in the header
     GitHubRepos.tsx   public repositories from the GitHub API, shown on Projects
+    FadeIn.tsx        GSAP fade-in of a page when it opens
     pages/            one component per page (plus NotFound), each with its own CSS file
   data/               content as JSON (work, education, skills, projects), texts in English and German
     data.test.ts      checks the content: unique ids, valid dates, complete translations
@@ -268,10 +269,9 @@ public/               files served as they are (favicon)
 | GitHub Pages | Hosting | Free static hosting that works together with Actions |
 | i18next + react-i18next | Translations | The most widely used i18n library for React. Detects the browser language, remembers the choice and checks the translation keys with TypeScript |
 | lucide-react | Icons | Came with the setup I started from. Icons are separate React components, so only the ones I use (menu and close) end up in the build |
+| GSAP + @gsap/react | Animations | Kept simple on purpose: when a page opens, its parts fade and slide in one after another. `useGSAP` cleans the animation up when the page changes, and `gsap.matchMedia` turns it off for visitors who set "reduce motion" on their device |
 | Vitest | Tests | Made by the Vite team and uses the same config, so TypeScript and JSON imports work in tests without extra setup. The API (`describe`, `it`, `expect`) is the same as Jest's |
 | React Router | Navigation | Gives every page its own URL. I use the `HashRouter` (`#/work`), because GitHub Pages only serves static files and would answer a reload of `/portfolio/work` with a 404 |
-
-Tools planned for Phase 2 (GSAP) will be added here once they are in use.
 
 ## Run (local)
 
