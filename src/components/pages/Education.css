@@ -1,3 +1,5 @@
+/* Education page: one card per degree with facts, thesis, modules and courses. */
+
 .education {
   padding: 2rem;
   max-width: 50rem;
@@ -7,6 +9,7 @@
   margin-bottom: 2rem;
 }
 
+/* Degree cards */
 .education-list {
   display: flex;
   flex-direction: column;
@@ -31,6 +34,7 @@
   margin: 0;
 }
 
+/* Period, highlighted while the degree is still ongoing */
 .education-period {
   font-size: 0.85rem;
 }
@@ -42,6 +46,7 @@
   border-radius: 999px;
 }
 
+/* Facts like grade and expected graduation, as a label/value list */
 .education-facts {
   display: flex;
   flex-wrap: wrap;
@@ -61,6 +66,7 @@
   color: var(--text-h);
 }
 
+/* Thesis and modules, name on the left and grade on the right */
 .education-thesis {
   margin: 1rem -1.25rem 0;
   padding: 1rem 1.25rem;
@@ -95,6 +101,7 @@
   color: var(--text-h);
 }
 
+/* Courses of the ERASMUS semester as chips */
 .education-courses {
   display: flex;
   flex-wrap: wrap;

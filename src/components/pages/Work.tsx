@@ -1,3 +1,8 @@
+/**
+ * Work page: software jobs as cards with tasks and skills, other jobs as a
+ * short list, all from `data/work.json`.
+ */
+
 import './Work.css'
 import workData from '../../data/work.json'
 import { useTranslation } from 'react-i18next'
@@ -16,6 +21,7 @@ function Work() {
     <section className="work">
       <h1>{t('work.title')}</h1>
 
+      {/* Software jobs as cards with tasks and skills */}
       <div className="work-list">
         {jobs.map((job) => (
           <article key={job.id} className="work-card">
@@ -51,7 +57,7 @@ function Work() {
           </article>
         ))}
       </div>
-      {/* TODO maybe some description for other work */}
+      {/* Jobs outside of software, only role, company and period */}
       <h2 className="work-other-title">{t('work.otherTitle')}</h2>
       <ul className="work-other">
         {otherJobs.map((job) => (

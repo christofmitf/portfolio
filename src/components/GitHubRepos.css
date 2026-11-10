@@ -1,3 +1,5 @@
+/* Repository list below the projects: cards in a grid that adds columns as space allows. */
+
 .github {
   margin-top: 3rem;
 }
@@ -11,6 +13,7 @@
   gap: 1rem;
 }
 
+/* One repository */
 .github-repo {
   border: 1px solid var(--border);
   border-radius: 12px;

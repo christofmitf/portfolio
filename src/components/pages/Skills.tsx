@@ -1,3 +1,8 @@
+/**
+ * Skills page: programming languages with a level from 1 to 5, tools,
+ * spoken languages and other skills, all from `data/skills.json`.
+ */
+
 import './Skills.css'
 import skillsData from '../../data/skills.json'
 import { useTranslation } from 'react-i18next'
@@ -22,6 +27,7 @@ function Skills() {
     <section className="skills">
       <h1>{t('skills.title')}</h1>
 
+      {/* Programming languages with a level from 1 to 5 */}
       <h2 className="skills-label">{t('skills.programming')}</h2>
       <div className="skills-grid">
         {programmingLanguages.map((lang) => (
@@ -46,6 +52,7 @@ function Skills() {
         ))}
       </div>
 
+      {/* Frameworks and tools, names are the same in every language */}
       <h2 className="skills-label">{t('skills.tools')}</h2>
       <div className="skills-chips">
         {tools.map((tool) => (
@@ -55,6 +62,7 @@ function Skills() {
         ))}
       </div>
 
+      {/* Spoken languages and other skills next to each other */}
       <div className="skills-columns">
         <div>
           <h2 className="skills-label">{t('skills.spoken')}</h2>

@@ -1,8 +1,11 @@
+/* About page: bio, value cards, hobby chips and the contact box. */
+
 .about {
   padding: 2rem;
   max-width: 50rem;
 }
 
+/* Bio */
 .about-bio {
   display: flex;
   flex-direction: column;
@@ -11,6 +14,7 @@
   line-height: 1.7;
 }
 
+/* Section headings */
 .about-label {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -19,6 +23,7 @@
   margin: 2.5rem 0 0.75rem;
 }
 
+/* What I enjoy: three cards */
 .about-values {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
@@ -36,6 +41,7 @@
   color: var(--text-h);
 }
 
+/* Hobbies as chips */
 .about-hobbies {
   display: flex;
   flex-wrap: wrap;
@@ -49,6 +55,7 @@
   border: 1px solid var(--border);
 }
 
+/* Contact box at the end */
 .about-contact {
   margin-top: 3rem;
   padding: 1.75rem;

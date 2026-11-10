@@ -1,3 +1,6 @@
+/* Layout of the main area between header and footer. */
+
+/* fills the space, so the footer stays at the bottom on short pages */
 main {
   flex: 1;
 }

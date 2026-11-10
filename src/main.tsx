@@ -1,3 +1,8 @@
+/**
+ * Entry point: loads the global styles and the translations, then mounts the
+ * app inside the router into the `#root` element of `index.html`.
+ */
+
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { HashRouter } from 'react-router'

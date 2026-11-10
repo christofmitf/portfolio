@@ -1,3 +1,8 @@
+/**
+ * Education page: one card per degree from `data/education.json`, with
+ * period, grades, thesis and selected modules or courses.
+ */
+
 import './Education.css'
 import educationData from '../../data/education.json'
 import { useTranslation } from 'react-i18next'
@@ -39,6 +44,7 @@ function Education() {
               {localize(entry.location, language)}
             </p>
 
+            {/* Facts like grade or expected graduation. Numbers are grades and get formatted per language */}
             <dl className="education-facts">
               {entry.facts.map((fact) => (
                 <div key={localize(fact.label, language)}>
@@ -51,6 +57,7 @@ function Education() {
                 </div>
               ))}
             </dl>
+            {/* The optional parts below only appear for degrees that have them */}
             {entry.courses && (
               <div className="education-courses">
                 {entry.courses.map((course) => (

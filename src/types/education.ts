@@ -18,7 +18,6 @@ export interface Module {
 }
 
 export interface Thesis {
-  // TODO Institute?
   title: string
   grade: number
 }

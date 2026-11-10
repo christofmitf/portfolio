@@ -1,3 +1,8 @@
+/**
+ * About page: bio, what I enjoy in my work, hobbies and a contact box.
+ * All texts come from the translations (`about.*`).
+ */
+
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import { paths } from '../../lib/navigation'
@@ -23,12 +28,14 @@ function About() {
     <section className="about">
       <h1>{t('about.title')}</h1>
 
+      {/* Bio */}
       <div className="about-bio">
         <p>{t('about.bio1')}</p>
         <p>{t('about.bio2')}</p>
         <p>{t('about.bio3')}</p>
       </div>
 
+      {/* What I enjoy in my work */}
       <h2 className="about-label">{t('about.enjoyTitle')}</h2>
       <div className="about-values">
         {values.map((value) => (
@@ -39,6 +46,7 @@ function About() {
         ))}
       </div>
 
+      {/* Hobbies */}
       <h2 className="about-label">{t('about.hobbiesTitle')}</h2>
       <div className="about-hobbies">
         {hobbies.map((hobby) => (
@@ -48,6 +56,7 @@ function About() {
         ))}
       </div>
 
+      {/* Contact box: email and a link to the work experience */}
       <div className="about-contact">
         <p className="about-contact-title">{t('about.contactTitle')}</p>
         <div className="about-contact-actions">

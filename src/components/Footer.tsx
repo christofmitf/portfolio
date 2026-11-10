@@ -1,8 +1,12 @@
+/**
+ * Footer shown on every page with the copyright and links to GitHub,
+ * LinkedIn and email. Kept as text links, they are clearer than icons alone.
+ */
+
 import { useTranslation } from 'react-i18next'
 import { githubProfileUrl } from '../lib/github'
 import './Footer.css'
 
-// TODO add icons
 interface FooterLink {
   /** key of the label in the translations (footer.*) */
   id: 'github' | 'linkedin' | 'email'

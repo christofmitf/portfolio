@@ -1,7 +1,10 @@
+/* Start page: intro next to the photo, overview cards and the current status. */
+
 .home {
   padding: 3rem 2rem;
 }
 
+/* Intro: text on the left, photo on the right (stacked on small screens) */
 .home-intro {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -44,6 +47,7 @@
   gap: 0.75rem;
 }
 
+/* Photo */
 .home-photo {
   aspect-ratio: 4 / 5;
   width: 100%;
@@ -57,6 +61,7 @@
   object-fit: cover;
 }
 
+/* Overview cards */
 .home-label {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -94,6 +99,7 @@
   margin-top: auto;
 }
 
+/* Current status with a small dot */
 .home-now {
   display: flex;
   align-items: center;

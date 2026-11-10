@@ -1,3 +1,8 @@
+/**
+ * Start page: short intro with photo, buttons to About and Work, overview
+ * cards that link to the main pages, and what I'm doing right now.
+ */
+
 import './Home.css'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
@@ -10,7 +15,6 @@ interface PreviewCard {
   target: Extract<PageId, 'work' | 'education' | 'skills'>
 }
 
-// TODO Projects card later
 const previewCards: PreviewCard[] = [
   { value: '3', target: 'work' },
   { value: 'M.Sc.', target: 'education' },
@@ -22,6 +26,7 @@ function Home() {
 
   return (
     <section className="home">
+      {/* Intro: who I am, with buttons to About and Work, next to the photo */}
       <div className="home-intro">
         <div className="home-text">
           <p className="home-overline">{t('home.overline')}</p>
@@ -45,6 +50,7 @@ function Home() {
           className="home-photo"
         />
       </div>
+      {/* Overview cards that link to the main pages */}
       <h2 className="home-label">{t('home.overview')}</h2>
       <div className="home-overview">
         {previewCards.map((card) => (
@@ -57,6 +63,7 @@ function Home() {
           </article>
         ))}
       </div>
+      {/* What I'm doing right now */}
       <p className="home-now">
         <span className="home-now-dot" />
         {t('home.status')}

@@ -1,8 +1,11 @@
+/* Projects page: search, filter chips, result line and project cards. */
+
 .projects {
   padding: 2rem;
   max-width: 50rem;
 }
 
+/* Search box and category filter */
 .projects-filters {
   display: flex;
   flex-direction: column;
@@ -18,6 +21,7 @@
   color: var(--text-h);
 }
 
+/* Chips, used for categories and technologies. Pressed chips are filled */
 .projects-categories,
 .project-technologies {
   display: flex;
@@ -45,6 +49,7 @@
   color: var(--bg);
 }
 
+/* Result count and reset link, read out by screen readers when it changes */
 .projects-status {
   font-size: 0.85rem;
   margin: 1.25rem 0;
@@ -61,6 +66,7 @@
   cursor: pointer;
 }
 
+/* Project cards */
 .projects-list {
   display: flex;
   flex-direction: column;
@@ -98,6 +104,7 @@
   line-height: 1.6;
 }
 
+/* Links below a project */
 .project-links {
   list-style: none;
   display: flex;

@@ -1,3 +1,8 @@
+/**
+ * Projects page: the projects from `data/projects.json` with search and
+ * filters, followed by my public repositories from GitHub.
+ */
+
 import './Projects.css'
 import projectsData from '../../data/projects.json'
 import { useTranslation } from 'react-i18next'
@@ -64,6 +69,7 @@ function Projects() {
     <section className="projects">
       <h1>{t('projects.title')}</h1>
 
+      {/* Search and category filter, both write into the URL */}
       <div className="projects-filters">
         <input
           type="search"
@@ -101,6 +107,7 @@ function Projects() {
         </div>
       </div>
 
+      {/* Result count, read out by screen readers whenever it changes */}
       <p className="projects-status" aria-live="polite">
         {t('projects.results', { count: visibleProjects.length })}
         {technology && <> · {t('projects.withTechnology', { technology })}</>}
@@ -119,6 +126,7 @@ function Projects() {
         <p className="projects-empty">{t('projects.noResults')}</p>
       )}
 
+      {/* Project cards, only the ones that match the filter */}
       <div className="projects-list">
         {visibleProjects.map((project) => (
           <article key={project.id} className="project-card">
@@ -133,6 +141,7 @@ function Projects() {
             </p>
             <p>{localize(project.description, language)}</p>
 
+            {/* Each technology is also a filter: click to show only projects that use it */}
             <div className="project-technologies">
               {project.technologies.map((name) => (
                 <button
@@ -164,6 +173,7 @@ function Projects() {
         ))}
       </div>
 
+      {/* Live list of my public repositories, loaded from GitHub */}
       <GitHubRepos />
     </section>
   )

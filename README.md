@@ -112,7 +112,7 @@ Phase 2 builds on that and adds what was missing.
 | P2-8 | Pages and images are only loaded when needed | US11 | Each page is its own JavaScript chunk in the build, and images below the fold use lazy loading | done |
 | P2-9 | Content (jobs, education, skills, projects) stored in JSON files instead of inside the components | maintainability | Changing a job or project only means editing a JSON file, no component code | planned |
 | P2-10 | Animations to make the site feel less static | peer review | Cards and sections animate in when they come into view, and animations are turned off with "reduce motion" | planned |
-| P2-11 | Code explained with comments and JSDoc headers | US13, lecturer feedback | Every component and data file starts with a JSDoc header, and non-obvious logic has a comment | planned |
+| P2-11 | Code explained with comments and JSDoc headers | US13, lecturer feedback | Every component and data file starts with a JSDoc header, and non-obvious logic has a comment | done |
 | P2-12 | Code formatter and automated tests, both checked in the pipeline | US13 | The pipeline fails if the code isn't formatted or a test fails | done |
 | P2-13 | Availability from summer 2027 shown on the home page (so far it's only on About) | US1 | "Available from summer 2027" is visible without scrolling on the home page | dropped: the date is already on Education (one tap from Home) and About, and recruiters come from a CV that states it too. A third copy would only be one more place to keep up to date |
 

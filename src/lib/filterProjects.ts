@@ -1,3 +1,8 @@
+/**
+ * Search and filter logic of the Projects page, kept outside the component
+ * so it can be tested on its own.
+ */
+
 import type { Category, Project } from '../types/projects'
 import type { Language } from '../types/i18n'
 import { localize } from './localize'

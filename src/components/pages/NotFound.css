@@ -1,3 +1,5 @@
+/* Page shown for URLs that match no page. */
+
 .not-found {
   padding: 2rem;
   max-width: 50rem;
