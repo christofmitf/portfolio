@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { formatGrade, formatPeriod, isOngoing } from './format'
+import { formatDay, formatGrade, formatPeriod, isOngoing } from './format'
 
 // Intl uses thin and narrow no-break spaces around the dash, which look the same as normal spaces
 function normalizeSpaces(text: string): string {
@@ -80,5 +80,14 @@ describe('formatGrade', () => {
     expect(formatGrade(1, 'en')).toBe('1.0')
     expect(formatGrade(1, 'de')).toBe('1,0')
     expect(formatGrade(1.3, 'de')).toBe('1,3')
+  })
+})
+
+describe('formatDay', () => {
+  it('formats a timestamp as a day in both languages', () => {
+    // midday, so the day is the same in every time zone the tests could run in
+    const timestamp = '2026-11-07T12:30:10Z'
+    expect(formatDay(timestamp, 'en')).toBe('Nov 7, 2026')
+    expect(formatDay(timestamp, 'de')).toBe('07.11.2026')
   })
 })

@@ -1,0 +1,43 @@
+.github {
+  margin-top: 3rem;
+}
+
+.github-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.github-repo {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.github-repo a {
+  font-weight: 600;
+  color: var(--text-h);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.github-repo a:hover {
+  color: var(--accent);
+}
+
+.github-meta {
+  font-size: 0.8rem;
+  margin-top: auto;
+}
+
+.github-profile {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--accent);
+}

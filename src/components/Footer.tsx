@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { githubProfileUrl } from '../lib/github'
 import './Footer.css'
 
 // TODO add icons
@@ -9,7 +10,7 @@ interface FooterLink {
 }
 
 const footerLinks: FooterLink[] = [
-  { id: 'github', href: 'https://github.com/christofmitf' },
+  { id: 'github', href: githubProfileUrl },
   {
     id: 'linkedin',
     href: 'https://www.linkedin.com/in/christof-schuster-179431326/',

@@ -67,3 +67,10 @@ export function formatGrade(grade: number, language: Language): string {
     maximumFractionDigits: 1,
   })
 }
+
+/** Formats an ISO timestamp as a day, "Nov 7, 2026" in English and "07.11.2026" in German. */
+export function formatDay(isoTimestamp: string, language: Language): string {
+  return new Intl.DateTimeFormat(language, { dateStyle: 'medium' }).format(
+    new Date(isoTimestamp),
+  )
+}

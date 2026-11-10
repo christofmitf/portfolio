@@ -113,6 +113,14 @@
     "reset": "Filter zurücksetzen",
     "noResults": "Keine passenden Projekte gefunden."
   },
+  "github": {
+    "title": "Auf GitHub",
+    "loading": "Repositories werden von GitHub geladen …",
+    "error": "Die Repositories konnten gerade nicht von GitHub geladen werden.",
+    "empty": "Noch keine öffentlichen Repositories.",
+    "updated": "aktualisiert am {{date}}",
+    "profile": "Mein GitHub-Profil"
+  },
   "notFound": {
     "title": "Seite nicht gefunden",
     "text": "Diese Seite gibt es nicht (mehr).",

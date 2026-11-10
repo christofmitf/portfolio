@@ -45,7 +45,7 @@ Rosa is 34 and works in HR at a mid-sized software company in Stuttgart. She loo
 
 She doesn't read everything. She wants to know within a minute what degree I have, when I finish, whether I have real work experience, and how to contact me. If she has to search for this, she closes the tab.
 
-**Scenario:** Rosa gets my application for a junior developer position starting summer 2027. She opens the portfolio from the CV on her phone. The site opens in German because her browser is set to German. On the home page she sees my degree and that I'm available from summer 2027. She taps through to Work to check that the working student job was actually software development, and then uses the contact button to send me an email asking for an interview.
+**Scenario:** Rosa gets my application for a junior developer position starting summer 2027. She opens the portfolio from the CV on her phone. The site opens in German because her browser is set to German. On the home page she sees my degree, and one tap on the education card shows that I graduate in summer 2027. She taps through to Work to check that the working student job was actually software development, and then uses the contact button to send me an email asking for an interview.
 
 ### Zohran, technical hiring engineer
 
@@ -59,7 +59,7 @@ He's less interested in grades and more in what I've actually built and how. He 
 
 From Rosa's point of view:
 
-- **US1** As a recruiter, I want to see my candidate's degree and when they're available on the first page, so that I can decide quickly if they fit the position.
+- **US1** As a recruiter, I want to see my candidate's degree on the first page and when they're available within one click, so that I can decide quickly if they fit the position.
 - **US2** As a recruiter, I want to see previous jobs with dates and what was done there, so that I can check if it was real software work.
 - **US3** As a recruiter, I want to contact the candidate with one click, so that I don't have to look for an email address.
 - **US4** As a recruiter, I want to read the site in German, so that I can go through it faster.
@@ -107,14 +107,14 @@ Phase 2 builds on that and adds what was missing.
 | P2-3 | Every page has its own URL, so refreshing and shared links work | US10, peer review | Reloading any page stays on that page, a copied link opens the same page, and an unknown URL shows a "not found" page | done |
 | P2-4 | Projects page with a short description, technologies and links for each project | US6, US8, peer review | At least 4 projects, each with description, technologies and a link (repository or more info) where one exists | done (descriptions to be refined) |
 | P2-5 | Search and filter on the Projects page | US7 | Typing a word or picking a tag only shows matching projects, and a message appears if nothing matches | done |
-| P2-6 | Public GitHub repositories loaded through the GitHub API | US8 | Repositories are loaded on page visit, and a loading and an error message are shown when needed | planned |
+| P2-6 | Public GitHub repositories loaded through the GitHub API | US8 | Repositories are loaded on page visit, and a loading and an error message are shown when needed | done |
 | P2-7 | Layout and navigation work on phones | US5 | All pages are usable at 360 px width (see NFR-1) | done |
 | P2-8 | Pages and images are only loaded when needed | US11 | Each page is its own JavaScript chunk in the build, and images below the fold use lazy loading | done |
 | P2-9 | Content (jobs, education, skills, projects) stored in JSON files instead of inside the components | maintainability | Changing a job or project only means editing a JSON file, no component code | planned |
 | P2-10 | Animations to make the site feel less static | peer review | Cards and sections animate in when they come into view, and animations are turned off with "reduce motion" | planned |
 | P2-11 | Code explained with comments and JSDoc headers | US13, lecturer feedback | Every component and data file starts with a JSDoc header, and non-obvious logic has a comment | planned |
 | P2-12 | Code formatter and automated tests, both checked in the pipeline | US13 | The pipeline fails if the code isn't formatted or a test fails | done |
-| P2-13 | Availability from summer 2027 shown on the home page (so far it's only on About) | US1 | "Available from summer 2027" is visible without scrolling on the home page | planned |
+| P2-13 | Availability from summer 2027 shown on the home page (so far it's only on About) | US1 | "Available from summer 2027" is visible without scrolling on the home page | dropped: the date is already on Education (one tap from Home) and About, and recruiters come from a CV that states it too. A third copy would only be one more place to keep up to date |
 
 ### Non-functional requirements
 
@@ -180,9 +180,17 @@ flowchart TD
         lib["lib/localize.ts, lib/format.ts"]
         hook["hooks/useLanguage.ts"]
     end
+    Header --> Switch["LanguageSwitch"]
+    Switch --> i18n["i18next<br/>language state, locales/*.json"]
+    hook --> i18n
+    Projects --> filter["lib/filterProjects.ts<br/>filter state in the URL"]
+    Projects --> Repos["GitHubRepos"]
+    Repos --> reposHook["hooks/useGitHubRepos.ts<br/>loading / error / success"]
+    reposHook --> github["lib/github.ts"]
+    github -->|fetch| api[("GitHub REST API")]
 ```
 
-The current page is now part of the URL (`#/work`) instead of React state. Header, Home and About use `Link`/`NavLink` from React Router to change it, and `App` only decides the layout. Work, Education and Skills render their content from the JSON files in `data/`.
+The current page is now part of the URL (`#/work`) instead of React state. Header, Home and About use `Link`/`NavLink` from React Router to change it, and `App` only decides the layout. Work, Education, Skills and Projects render their content from the JSON files in `data/`. The language lives in i18next, so the switch in the header changes every page at once. The Projects page keeps its filter in the URL and loads my public repositories live from the GitHub API.
 
 ### End of Phase 1
 
@@ -225,6 +233,7 @@ src/
     Header.tsx        navigation bar, collapses into a menu button below 900 px
     Footer.tsx        links and copyright
     LanguageSwitch.tsx  EN/DE buttons in the header
+    GitHubRepos.tsx   public repositories from the GitHub API, shown on Projects
     pages/            one component per page (plus NotFound), each with its own CSS file
   data/               content as JSON (work, education, skills, projects), texts in English and German
     data.test.ts      checks the content: unique ids, valid dates, complete translations
@@ -236,9 +245,11 @@ src/
     localize.ts       picks the right language from a translated text
     format.ts         dates and grades per language with the Intl API
     filterProjects.ts search and filter logic of the Projects page
+    github.ts         loads the repositories from the GitHub API
     *.test.ts         unit tests next to the file they test
   hooks/
     useLanguage.ts    current language and a function to change it
+    useGitHubRepos.ts loading, error or loaded repositories
   assets/             images that are imported in the code
 public/               files served as they are (favicon)
 .github/workflows/    CI/CD pipeline

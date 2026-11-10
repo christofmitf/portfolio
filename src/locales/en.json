@@ -113,6 +113,14 @@
     "reset": "Reset filters",
     "noResults": "No projects match your search."
   },
+  "github": {
+    "title": "On GitHub",
+    "loading": "Loading repositories from GitHub…",
+    "error": "The repositories couldn't be loaded from GitHub right now.",
+    "empty": "No public repositories yet.",
+    "updated": "updated {{date}}",
+    "profile": "My GitHub profile"
+  },
   "notFound": {
     "title": "Page not found",
     "text": "This page doesn't exist (anymore).",

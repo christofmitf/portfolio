@@ -2,6 +2,7 @@ import './Projects.css'
 import projectsData from '../../data/projects.json'
 import { useTranslation } from 'react-i18next'
 import { useSearchParams } from 'react-router'
+import GitHubRepos from '../GitHubRepos'
 import useLanguage from '../../hooks/useLanguage'
 import { filterProjects } from '../../lib/filterProjects'
 import { formatPeriod } from '../../lib/format'
@@ -162,6 +163,8 @@ function Projects() {
           </article>
         ))}
       </div>
+
+      <GitHubRepos />
     </section>
   )
 }
