@@ -255,6 +255,8 @@ src/
     useGitHubRepos.ts loading, error or loaded repositories
   assets/             images that are imported in the code
 public/               files served as they are (favicon)
+e2e/                  browser walkthrough of the persona scenarios with Playwright
+scripts/lighthouse.mjs  Lighthouse scores for Home and Projects, mobile and desktop
 .github/workflows/    CI/CD pipeline
 ```
 
@@ -273,6 +275,8 @@ public/               files served as they are (favicon)
 | lucide-react | Icons | Came with the setup I started from. Icons are separate React components, so only the ones I use (menu and close) end up in the build |
 | GSAP + @gsap/react | Animations | Kept simple on purpose: when a page opens, its parts fade and slide in one after another. `useGSAP` cleans the animation up when the page changes, and `gsap.matchMedia` turns it off for visitors who set "reduce motion" on their device |
 | Vitest | Tests | Made by the Vite team and uses the same config, so TypeScript and JSON imports work in tests without extra setup. The API (`describe`, `it`, `expect`) is the same as Jest's |
+| Playwright | Browser tests | Clicks through the site in a real browser like a visitor would, so the persona walkthrough can be repeated after every change instead of by hand. Runs in the installed Edge, so no extra browser download |
+| Lighthouse | Evaluation | The standard tool for performance and accessibility scores, and the one named in NFR-2 and NFR-3. Run from a script so the measurement is the same every time |
 | React Router | Navigation | Gives every page its own URL. I use the `HashRouter` (`#/work`), because GitHub Pages only serves static files and would answer a reload of `/portfolio/work` with a 404 |
 
 ## Run (local)
@@ -294,17 +298,45 @@ npm run format        # format all files with Prettier
 npm run format:check  # only check, used in CI
 npm test              # run all tests once
 npx vitest            # run tests again on every change
+npm run test:e2e      # browser walkthrough with Playwright (see Tests)
+npm run lighthouse    # Lighthouse scores of the live site (see Evaluation)
 npm run build         # type check and production build
 ```
 
 ## Tests
 
-Tests use [Vitest](https://vitest.dev/) and sit next to the file they test (`format.ts` and `format.test.ts`). There are two kinds:
+Unit and content tests use [Vitest](https://vitest.dev/) and sit next to the file they test (`format.ts` and `format.test.ts`). There are two kinds:
 
 - **Unit tests** for the functions in `src/lib`: date periods and grades in both languages, picking the right language, and the project search and filter. They don't need React, because these functions only take input and return output. The filter tests use small made-up projects, so they don't break whenever I change the real content.
 - **Content tests** (`src/data/data.test.ts`) for the JSON files. TypeScript checks that every field exists and has the right type, but not that the values make sense. These tests check that ids are unique, dates are real months and don't end before they start, every text exists in English and German, no `DE_` placeholder is left, projects have a known category and links use https.
 
 To check that the content tests really catch mistakes, I broke `projects.json` on purpose (a duplicate id, the month `2026-13`, a `DE_` placeholder, an unknown category and an `http` link). Each change made exactly the matching test fail.
+
+### Browser walkthrough (Playwright)
+
+[e2e/walkthrough.spec.ts](e2e/walkthrough.spec.ts) plays through the scenarios of both personas in a real browser and checks the user stories along the way:
+
+- **Rosa:** German browser on a 390 × 844 phone. The site opens in German, the degree is visible without scrolling, she gets to Education and Work through the menu, and the email link works.
+- **Zohran:** German browser on a 1280 × 800 laptop. He switches to English, searches and filters the projects, opens the same filtered link as a colleague would, and checks the skill levels.
+- **NFR-1:** every page at 360, 768 and 1280 px in both languages, checking that nothing scrolls sideways.
+
+Run it with:
+
+```bash
+npm run test:e2e
+```
+
+This builds the site, starts `vite preview` and runs the tests in Microsoft Edge, so they test the same files that get deployed. Other useful commands:
+
+```bash
+npx playwright test --ui        # window where you can run single tests and watch every step
+npx playwright test --headed    # shows the browser while the tests run
+npx playwright show-report      # opens the report of the last run, with screenshots of failures
+```
+
+Edge is used because it's already installed on Windows. Without Edge, run `npx playwright install chromium` and remove the `channel` line in [playwright.config.ts](playwright.config.ts).
+
+The walkthrough is not part of the CI pipeline yet. It runs locally before a push.
 
 ## CI/CD
 
@@ -328,19 +360,35 @@ The actions are pinned to commit hashes instead of tags like `@v4`, so the pipel
 The finished site was evaluated in three ways (details in the report):
 
 - **Code inspection:** a checklist review based on Fagan (1976), with the same criteria I used for reviewing another student's portfolio in Phase 1, plus checks for the Phase 2 features.
-- **Walkthrough:** both personas went through their scenarios on the built site, automated with Playwright in Edge, and every user story was marked as met or not.
-- **Lighthouse** (version 12, mobile and desktop) for the non-functional requirements.
+- **Walkthrough:** both personas went through their scenarios on the built site, automated with Playwright in Edge (`npm run test:e2e`, see [Tests](#tests)), and every user story was marked as met or not.
+- **Lighthouse** (mobile and desktop) on Home and Projects for the non-functional requirements (`npm run lighthouse`, see below). The values before the fixes come from version 12, the values after from version 13, so they aren't strictly comparable.
 
 Results for the non-functional requirements after fixing what the evaluation found:
 
 | ID | Result |
 |---|---|
-| NFR-1 | Met: no horizontal scrolling on any page at 360, 768 and 1280 px, in both languages |
-| NFR-2 | Not fully met: mobile performance 77 to 82 (was 55 to 74), desktop 95 to 99. What is left is JavaScript execution time on a slow phone |
+| NFR-1 | Met: no horizontal scrolling on any page at 360, 768 and 1280 px, in both languages (checked by `npm run test:e2e`) |
+| NFR-2 | Met, with little margin: mobile performance 97 on Home and Projects (was 55 and 74), desktop 100, measured on the live site. Mobile scores vary between runs, another run gave 88 for Home |
 | NFR-3 | Met: accessibility 100 (was 96), keyboard run through passed |
 | NFR-4 | Met: largest image 58 KB |
 | NFR-5 | Met: no lint or type errors, content rendered from data |
 | NFR-6 | Partly checked: tested in Edge (Chromium) only |
+
+### Repeating the Lighthouse measurement
+
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) is Google's tool for checking a web page. It loads the page in a browser and gives scores from 0 to 100 for performance, accessibility, best practices and SEO, together with a list of what to fix. The mobile preset simulates a slow phone on a slow network, the desktop preset a normal laptop.
+
+[scripts/lighthouse.mjs](scripts/lighthouse.mjs) runs it on Home and Projects with both presets and prints a table:
+
+```bash
+npm run lighthouse                                       # live site
+npm run preview                                          # or: local build, in a second terminal
+npm run lighthouse -- http://localhost:4173/portfolio/
+```
+
+The full reports, with every finding explained, are saved as HTML files in `lighthouse-reports/`. The same check also works without the script: open the site in Chrome or Edge, press F12 and pick the Lighthouse tab, or use [PageSpeed Insights](https://pagespeed.web.dev/), which measures on Google's servers.
+
+The scores, mostly performance, change by a few points between runs, because they depend on the computer and the network.
 
 ## Credits
 
