@@ -36,7 +36,15 @@ function Skills() {
               <span className="skills-name">
                 {localize(lang.name, language)}
               </span>
-              <span className="skills-dots">
+              {/* the dots are only a picture, screen readers get the level as text */}
+              <span
+                className="skills-dots"
+                role="img"
+                aria-label={t('skills.level', {
+                  level: lang.level,
+                  max: maxLevel,
+                })}
+              >
                 {Array.from({ length: maxLevel }, (_, i) => (
                   <span
                     key={i}

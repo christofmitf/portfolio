@@ -5,6 +5,7 @@
 
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
+import { emailUrl } from '../../lib/contact'
 import { paths } from '../../lib/navigation'
 import './About.css'
 
@@ -60,7 +61,7 @@ function About() {
       <div className="about-contact">
         <p className="about-contact-title">{t('about.contactTitle')}</p>
         <div className="about-contact-actions">
-          <a className="button primary" href="mailto:christof.schuster@gmx.de">
+          <a className="button primary" href={emailUrl}>
             {t('about.getInTouch')}
           </a>
           <Link to={paths.work} className="button">

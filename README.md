@@ -22,6 +22,7 @@ Live version: https://christofmitf.github.io/portfolio/
 - [Run (local)](#run-local)
 - [Tests](#tests)
 - [CI/CD](#cicd)
+- [Evaluation](#evaluation)
 - [Credits](#credits)
 - [References](#references)
 
@@ -110,8 +111,8 @@ Phase 2 builds on that and adds what was missing.
 | P2-6 | Public GitHub repositories loaded through the GitHub API | US8 | Repositories are loaded on page visit, and a loading and an error message are shown when needed | done |
 | P2-7 | Layout and navigation work on phones | US5 | All pages are usable at 360 px width (see NFR-1) | done |
 | P2-8 | Pages and images are only loaded when needed | US11 | Each page is its own JavaScript chunk in the build, and images below the fold use lazy loading | done |
-| P2-9 | Content (jobs, education, skills, projects) stored in JSON files instead of inside the components | maintainability | Changing a job or project only means editing a JSON file, no component code | planned |
-| P2-10 | Animations to make the site feel less static | peer review | Cards and sections animate in when they come into view, and animations are turned off with "reduce motion" | planned |
+| P2-9 | Content (jobs, education, skills, projects) stored in JSON files instead of inside the components | maintainability | Changing a job or project only means editing a JSON file, no component code | done |
+| P2-10 | Animations to make the site feel less static | peer review | The content of a page animates in when the page opens, and animations are turned off with "reduce motion" (changed from scroll animations, which were dropped to keep it simple) | done |
 | P2-11 | Code explained with comments and JSDoc headers | US13, lecturer feedback | Every component and data file starts with a JSDoc header, and non-obvious logic has a comment | done |
 | P2-12 | Code formatter and automated tests, both checked in the pipeline | US13 | The pipeline fails if the code isn't formatted or a test fails | done |
 | P2-13 | Availability from summer 2027 shown on the home page (so far it's only on About) | US1 | "Available from summer 2027" is visible without scrolling on the home page | dropped: the date is already on Education (one tap from Home) and About, and recruiters come from a CV that states it too. A third copy would only be one more place to keep up to date |
@@ -135,13 +136,14 @@ Phase 2 builds on that and adds what was missing.
 - Overview cards on the home page that link to Work, Education and Skills
 - Light and dark colours that follow the system setting
 
-**Phase 2** (in progress)
-- Automatic build and deployment with GitHub Actions, live on GitHub Pages
-- German and English version
-- Own URL for every page
-- Projects page with search and filter, plus repositories from the GitHub API
-- Content in JSON files, lazy loaded pages, animations with GSAP
-- Comments, formatter and tests
+**Phase 2**
+- Automatic build and deployment with GitHub Actions (lint, format check, tests, build), live on GitHub Pages
+- German and English version, chosen by browser language, with a switch in the header
+- Own URL for every page, including the current project filter
+- Projects page with search and filters, plus my public repositories loaded from the GitHub API
+- Content in JSON files, lazy loaded pages, a short page fade-in with GSAP
+- Menu button on small screens, visible keyboard focus and a skip link
+- Header comments in every file, Prettier and tests with Vitest
 
 ## Architecture
 
@@ -320,6 +322,25 @@ Steps:
 If linting, the format check, a test or the build fails, nothing is deployed, so the live site always stays on the last working version.
 
 The actions are pinned to commit hashes instead of tags like `@v4`, so the pipeline only changes when I update it myself. Because the site lives under `/portfolio/` and not at the root, `base` is set to `/portfolio/` in `vite.config.ts`, otherwise the CSS, JS and images wouldn't load.
+
+## Evaluation
+
+The finished site was evaluated in three ways (details in the report):
+
+- **Code inspection:** a checklist review based on Fagan (1976), with the same criteria I used for reviewing another student's portfolio in Phase 1, plus checks for the Phase 2 features.
+- **Walkthrough:** both personas went through their scenarios on the built site, automated with Playwright in Edge, and every user story was marked as met or not.
+- **Lighthouse** (version 12, mobile and desktop) for the non-functional requirements.
+
+Results for the non-functional requirements after fixing what the evaluation found:
+
+| ID | Result |
+|---|---|
+| NFR-1 | Met: no horizontal scrolling on any page at 360, 768 and 1280 px, in both languages |
+| NFR-2 | Not fully met: mobile performance 77 to 82 (was 55 to 74), desktop 95 to 99. What is left is JavaScript execution time on a slow phone |
+| NFR-3 | Met: accessibility 100 (was 96), keyboard run through passed |
+| NFR-4 | Met: largest image 58 KB |
+| NFR-5 | Met: no lint or type errors, content rendered from data |
+| NFR-6 | Partly checked: tested in Edge (Chromium) only |
 
 ## Credits
 

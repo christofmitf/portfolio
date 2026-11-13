@@ -94,7 +94,8 @@
     "programming": "Programmiersprachen",
     "tools": "Frameworks & Tools",
     "spoken": "Sprachen",
-    "other": "Weitere Kenntnisse"
+    "other": "Weitere Kenntnisse",
+    "level": "Stufe {{level}} von {{max}}"
   },
   "projects": {
     "title": "Projekte",

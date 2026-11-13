@@ -6,9 +6,10 @@
   --text-h: #08060d;
   --bg: #fff;
   --border: #e5e4e7;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
+  /* darker than the Vite default #aa3bff, which failed the WCAG contrast of 4.5:1 */
+  --accent: #9327e6;
+  --accent-bg: rgba(147, 39, 230, 0.1);
+  --accent-border: rgba(147, 39, 230, 0.5);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 

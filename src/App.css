@@ -1,6 +1,10 @@
 /* Layout of the main area between header and footer. */
 
-/* fills the space, so the footer stays at the bottom on short pages */
+/*
+ * At least one screen high, so the footer starts below the fold. Otherwise it
+ * would jump down when a lazy loaded page arrives, which Lighthouse counts as a layout shift.
+ */
 main {
   flex: 1;
+  min-height: 100svh;
 }

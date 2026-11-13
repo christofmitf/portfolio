@@ -4,6 +4,7 @@
  */
 
 import { useTranslation } from 'react-i18next'
+import { emailUrl, linkedinUrl } from '../lib/contact'
 import { githubProfileUrl } from '../lib/github'
 import './Footer.css'
 
@@ -15,11 +16,8 @@ interface FooterLink {
 
 const footerLinks: FooterLink[] = [
   { id: 'github', href: githubProfileUrl },
-  {
-    id: 'linkedin',
-    href: 'https://www.linkedin.com/in/christof-schuster-179431326/',
-  },
-  { id: 'email', href: 'mailto:christof.schuster@gmx.de' },
+  { id: 'linkedin', href: linkedinUrl },
+  { id: 'email', href: emailUrl },
 ]
 
 const year = new Date().getFullYear()
@@ -38,7 +36,8 @@ function Footer() {
           <a
             key={link.id}
             href={link.href}
-            target="_blank"
+            // email opens the mail program, a new tab would only stay empty
+            target={link.id === 'email' ? undefined : '_blank'}
             rel="noopener noreferrer"
           >
             {t(`footer.${link.id}`)}

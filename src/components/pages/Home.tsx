@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import { paths, type PageId } from '../../lib/navigation'
 import photo from '../../assets/cliffs.webp'
+import workData from '../../data/work.json'
 
 /** The big value is the same in every language, label and link text are translated (home.cards.*) */
 interface PreviewCard {
@@ -16,7 +17,8 @@ interface PreviewCard {
 }
 
 const previewCards: PreviewCard[] = [
-  { value: '3', target: 'work' },
+  // counted from the data, so it stays right when a job is added
+  { value: String(workData.jobs.length), target: 'work' },
   { value: 'M.Sc.', target: 'education' },
   { value: 'Python, Java, Flutter', target: 'skills' },
 ]
@@ -32,6 +34,11 @@ function Home() {
           <p className="home-overline">{t('home.overline')}</p>
           <h1>{t('home.greeting')}</h1>
           <p className="home-tagline">{t('home.tagline')}</p>
+          {/* What I'm doing right now, high up so it's visible without scrolling (P1-1) */}
+          <p className="home-now">
+            <span className="home-now-dot" />
+            {t('home.status')}
+          </p>
           <div className="home-actions">
             <Link to={paths.about} className="button primary">
               {t('home.moreAboutMe')}
@@ -47,6 +54,8 @@ function Home() {
           alt={t('home.photoAlt')}
           width={900}
           height={1125}
+          // the largest image on the page, so the browser should load it first
+          fetchPriority="high"
           className="home-photo"
         />
       </div>
@@ -63,11 +72,6 @@ function Home() {
           </article>
         ))}
       </div>
-      {/* What I'm doing right now */}
-      <p className="home-now">
-        <span className="home-now-dot" />
-        {t('home.status')}
-      </p>
     </section>
   )
 }
